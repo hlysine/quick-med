@@ -1,10 +1,10 @@
 import { createLazyFileRoute } from '@tanstack/react-router';
 import { useVirtualizer } from '@tanstack/react-virtual';
-import { useMemo, useRef, useState } from 'react';
+import { Suspense, use, useEffect, useMemo, useRef, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import MouseDownLink from '../components/MouseDownLink';
 import debounce from 'lodash/debounce';
-import { PageResult, savedQuery, search } from './-search';
+import type { PageResult } from './-search';
 
 function SearchResults({ results }: { results: PageResult[] }) {
   const parentRef = useRef<HTMLDivElement>(null);
@@ -64,9 +64,21 @@ function SearchResults({ results }: { results: PageResult[] }) {
   );
 }
 
-function Search() {
+let savedQuery = '';
+
+const searchPromise = import('./-search').then(mod => mod.search);
+
+function Search({ query }: { query: string }) {
+  const search = use(searchPromise);
+  const results = useMemo(() => {
+    return search(query);
+  }, [query, search]);
+
+  return <SearchResults results={results} />;
+}
+
+function SearchPage() {
   const [query, setQuery] = useState(savedQuery);
-  const results = useMemo(() => search(query), [query]);
 
   const debounceInput = useMemo(
     () =>
@@ -79,6 +91,9 @@ function Search() {
       ),
     []
   );
+  useEffect(() => {
+    savedQuery = query;
+  }, [query]);
 
   return (
     <div className="flex-1 flex flex-col items-center justify-center gap-2 w-full mt-2 max-w-250 self-center">
@@ -93,11 +108,19 @@ function Search() {
           onInput={e => debounceInput(e.currentTarget.value)}
         />
       </label>
-      <SearchResults results={results} />
+      <Suspense
+        fallback={
+          <div className="flex-1 flex items-center justify-center">
+            <div className="w-12 h-12 loading loading-spinner" />
+          </div>
+        }
+      >
+        <Search query={query} />
+      </Suspense>
     </div>
   );
 }
 
 export const Route = createLazyFileRoute('/search')({
-  component: Search,
+  component: SearchPage,
 });

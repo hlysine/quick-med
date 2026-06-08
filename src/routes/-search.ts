@@ -129,13 +129,7 @@ function createTextFragment(target: string) {
 
 console.timeEnd('Search Indexing');
 
-// Saved query is stored as a variable to persist across re-renders but not across app restarts.
-export let savedQuery = '';
-
 export function search(query: string): PageResult[] {
-  if (query !== savedQuery) {
-    savedQuery = query;
-  }
   if (query.length === 0) return defaultResult;
   const searchResults = miniSearch.search(query) as unknown as PageResult[];
   return searchResults.map(result => {
