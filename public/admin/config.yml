@@ -4,6 +4,7 @@ backend:
   repo: 'hlysine/quick-med'
   base_url: https://quick-med-auth.up.railway.app
   auth_endpoint: /auth
+site_url: https://quick-med.up.railway.app
 media_folder: 'public/assets'
 public_folder: 'assets'
 collections:
