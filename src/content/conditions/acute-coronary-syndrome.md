@@ -43,7 +43,7 @@ keywords:
 - Dual antiplatelet therapy
   - [**Chewable aspirin**](../treatments/antiplatelet) 162-325 mg
   - [**P2Y<sub>12</sub> inhibitor**](../treatments/antiplatelet) - ticagrelor, prasugrel, clopidogrel
-- [**Sublingual nitroglycerin**](../treatments/nitroglycerin) every 5 minutes for 3 doses
+- [**Sublingual nitroglycerin**](../treatments/nitrate) every 5 minutes for 3 doses
   - Contraindicated in recent PDE inhibitor use, hypotension, RV infarction
 - [**Anticoagulation**](../treatments/anticoagulant) - unfractionated heparin, enoxaparin, fondaparinux, bivalirudin
 - [**Beta-blocker**](../treatments/beta-blocker) in first 24 hours
