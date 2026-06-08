@@ -106,6 +106,9 @@ function Settings() {
           label="Use Dark Mode"
         />
         <ClearBookmarks />
+        <a className="btn" href="/admin">
+          Edit content
+        </a>
       </div>
     </div>
   );
