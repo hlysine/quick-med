@@ -28,8 +28,6 @@
           CMS.registerPreviewStyle('/src/index.css');
         });
 
-      const { h } = window.CMS;
-
       const CustomPreview = ({ entry, widgetFor }) => {
         // 2. Wrap the markdown render inside your layout container classes
         return h('main', { className: 'markdown' }, widgetFor('body'));
