@@ -1,5 +1,5 @@
 {
-  "name": "extremely-basic",
+  "name": "quick-med",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -16,6 +16,7 @@
     "@tanstack/react-router-devtools": "^1.120.15",
     "@tanstack/react-virtual": "^3.13.18",
     "clsx": "^2.1.1",
+    "decap-cms-app": "^3.14.0",
     "lodash": "^4.17.21",
     "markdown-to-jsx": "^7.7.6",
     "marked": "^15.0.12",

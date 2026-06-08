@@ -4,9 +4,18 @@ import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import tailwindcss from '@tailwindcss/vite';
 import { markdownIndex } from './scripts/markdownIndexPlugin';
+import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        admin: resolve(__dirname, 'admin/index.html'),
+      },
+    },
+  },
   plugins: [
     markdownIndex({
       entries: [
@@ -89,9 +98,9 @@ export default defineConfig({
         ],
       },
       manifest: {
-        name: 'Extremely Basic',
-        short_name: 'Extremely Basic',
-        description: 'Acute medicine quick reference',
+        name: 'Quick Med',
+        short_name: 'Quick Med',
+        description: 'Medicine quick reference',
         theme_color: '#414558',
         background_color: '#edeff7',
         orientation: 'portrait',

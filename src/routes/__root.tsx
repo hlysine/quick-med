@@ -16,7 +16,7 @@ function Dock() {
   useEffect(() => {
     const tab = tabs.find(tab => location.pathname.startsWith(tab.to));
     if (tab) {
-      document.title = `Extremely Basic - ${tab.name}`;
+      document.title = `Quick Med - ${tab.name}`;
     }
   }, [location]);
 
@@ -49,7 +49,7 @@ export const Route = createRootRoute({
             <li>
               <MouseDownLink to="/" className="btn btn-ghost text-xl">
                 <img src="/logo.svg" alt="Logo" className="h-8 mr-2" />
-                Extremely Basic
+                Quick Med
               </MouseDownLink>
             </li>
           </ul>

@@ -1,0 +1,41 @@
+backend:
+  name: github
+  branch: main
+  repo: 'hlysine/quick-med'
+  base_url: https://quick-med-auth.up.railway.app
+  auth_endpoint: /auth
+media_folder: 'public/assets'
+public_folder: 'assets'
+collections:
+  - name: 'algorithms'
+    label: 'Algorithms'
+    folder: 'src/content/algorithms'
+    create: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Section', name: 'section', widget: 'string' }
+      - { label: 'Keywords', name: 'keywords', widget: 'list' }
+  - name: 'calc'
+    label: 'Calculators'
+    folder: 'src/content/calc'
+    create: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Section', name: 'section', widget: 'string' }
+      - { label: 'Keywords', name: 'keywords', widget: 'list' }
+  - name: 'conditions'
+    label: 'Conditions'
+    folder: 'src/content/conditions'
+    create: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Section', name: 'section', widget: 'string' }
+      - { label: 'Keywords', name: 'keywords', widget: 'list' }
+  - name: 'treatments'
+    label: 'Treatments'
+    folder: 'src/content/treatments'
+    create: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Section', name: 'section', widget: 'string' }
+      - { label: 'Keywords', name: 'keywords', widget: 'list' }

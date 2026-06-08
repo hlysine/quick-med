@@ -81,7 +81,7 @@ function Settings() {
   } = useRegisterSW();
   return (
     <div className="flex-1 flex p-4 flex-col gap-2 w-full mt-2 max-w-250 self-center">
-      <h1 className="text-4xl font-bold">Extremely Basic</h1>
+      <h1 className="text-4xl font-bold">Quick Med</h1>
       <p className="text-xl">Acute medicine quick reference</p>
       <div className="divider" />
       {isPWA ? (
