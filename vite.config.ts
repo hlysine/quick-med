@@ -16,6 +16,9 @@ export default defineConfig({
       },
     },
   },
+  optimizeDeps: {
+    exclude: ['decap-cms-app', 'decap-cms-core'],
+  },
   plugins: [
     markdownIndex({
       entries: [
