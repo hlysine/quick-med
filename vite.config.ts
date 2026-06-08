@@ -15,6 +15,7 @@ export default defineConfig({
         admin: resolve(__dirname, 'admin/index.html'),
       },
     },
+    manifest: true,
   },
   optimizeDeps: {
     exclude: ['decap-cms-app', 'decap-cms-core'],
@@ -55,7 +56,7 @@ export default defineConfig({
       includeAssets: ['favicon.ico', '*.svg', '*.png', 'assets/**/*'],
       workbox: {
         maximumFileSizeToCacheInBytes: 50 * 1024 * 1024,
-        navigateFallbackDenylist: [/^\/admin/],
+        navigateFallbackDenylist: [/^\/admin/, /^\/\.vite/],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,

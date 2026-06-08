@@ -10,10 +10,36 @@
     <meta name="theme-color" content="#414558" />
     <link rel="preload" as="image" href="/logo.svg" fetchpriority="high" />
     <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
-    <link href="/src/index.css" rel="stylesheet" />
     <title>Admin - Quick Med</title>
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      // Automatically discover and extract the hashed CSS path on page initialize
+      fetch('/.vite/manifest.json')
+        .then(res => res.json())
+        .then(manifest => {
+          const mainEntry = manifest['index.html'];
+          if (mainEntry && mainEntry.css && mainEntry.css.length > 0) {
+            CMS.registerPreviewStyle(`/${mainEntry.css[0]}`);
+          }
+        })
+        .catch(() => {
+          CMS.registerPreviewStyle('/src/index.css');
+        });
+
+      const { h } = window.CMS;
+
+      const CustomPreview = ({ entry, widgetFor }) => {
+        // 2. Wrap the markdown render inside your layout container classes
+        return;
+        h('main', { className: 'markdown' }, widgetFor('body'));
+      };
+
+      CMS.registerPreviewTemplate('algorithms', CustomPreview);
+      CMS.registerPreviewTemplate('calc', CustomPreview);
+      CMS.registerPreviewTemplate('conditions', CustomPreview);
+      CMS.registerPreviewTemplate('treatments', CustomPreview);
+    </script>
   </body>
 </html>
