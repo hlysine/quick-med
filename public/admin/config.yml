@@ -7,36 +7,45 @@ backend:
 site_url: https://quick-med.up.railway.app
 media_folder: 'public/assets'
 public_folder: 'assets'
+publish_mode: editorial_workflow
 collections:
   - name: 'algorithms'
     label: 'Algorithms'
     folder: 'src/content/algorithms'
+    preview_path: 'algorithms/{{slug}}'
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Section', name: 'section', widget: 'string' }
       - { label: 'Keywords', name: 'keywords', widget: 'list' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'calc'
     label: 'Calculators'
     folder: 'src/content/calc'
+    preview_path: 'calc/{{slug}}'
     create: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Section', name: 'section', widget: 'string' }
       - { label: 'Keywords', name: 'keywords', widget: 'list' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'conditions'
     label: 'Conditions'
     folder: 'src/content/conditions'
+    preview_path: 'conditions/{{slug}}'
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Section', name: 'section', widget: 'string' }
       - { label: 'Keywords', name: 'keywords', widget: 'list' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'treatments'
     label: 'Treatments'
     folder: 'src/content/treatments'
+    preview_path: 'treatments/{{slug}}'
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Section', name: 'section', widget: 'string' }
       - { label: 'Keywords', name: 'keywords', widget: 'list' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
