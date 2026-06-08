@@ -52,6 +52,7 @@ export default defineConfig({
       includeAssets: ['favicon.ico', '*.svg', '*.png', 'assets/**/*'],
       workbox: {
         maximumFileSizeToCacheInBytes: 50 * 1024 * 1024,
+        navigateFallbackDenylist: [/^\/admin/],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
