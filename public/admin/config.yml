@@ -8,6 +8,7 @@ site_url: https://quick-med.up.railway.app
 media_folder: 'public/assets'
 public_folder: 'assets'
 publish_mode: editorial_workflow
+open_authoring: true
 collections:
   - name: 'algorithms'
     label: 'Algorithms'
