@@ -28,16 +28,16 @@ export default defineConfig({
           output: 'src/routes/conditions/-list.gen.json',
         },
         {
-          folderPath: 'src/content/treatments',
-          output: 'src/routes/treatments/-list.gen.json',
+          folderPath: 'src/content/managements',
+          output: 'src/routes/managements/-list.gen.json',
         },
         {
           folderPath: 'src/content/calc',
           output: 'src/routes/calc/-list.gen.json',
         },
         {
-          folderPath: 'src/content/algorithms',
-          output: 'src/routes/algorithms/-list.gen.json',
+          folderPath: 'src/content/investigations',
+          output: 'src/routes/investigations/-list.gen.json',
         },
       ],
     }),

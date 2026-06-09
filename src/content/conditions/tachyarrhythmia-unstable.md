@@ -23,7 +23,7 @@ keywords:
 
 ### DC cardioversion
 
-**Refer to [Cardioversion / defibrillation](../treatments/cardioversion-defibrillation)**
+**Refer to [Cardioversion / defibrillation](../managements/cardioversion-defibrillation)**
 
 | Indication               | Monophasic energy | Biphasic energy | Synchronized |
 |--------------------------|-------------------|-----------------|--------------|

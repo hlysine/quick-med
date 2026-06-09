@@ -21,7 +21,7 @@ import { cn } from '../utils/uiUtils';
 import {
   FaBookMedical,
   FaCalculator,
-  FaProjectDiagram,
+  FaFlask,
   FaSearch,
   FaSyringe,
 } from 'react-icons/fa';
@@ -30,9 +30,10 @@ if (settingsStore.get('bookmarks').length > 0) {
   Promise.all([
     import('../routes/calc/-list.gen.json'),
     import('../routes/conditions/-list.gen.json'),
-    import('../routes/treatments/-list.gen.json'),
+    import('../routes/investigations/-list.gen.json'),
+    import('../routes/managements/-list.gen.json'),
   ])
-    .then(([calcList, conditionList, treatmentList]) => {
+    .then(([calcList, conditionList, investigationList, managementList]) => {
       const bookmarks = settingsStore.get('bookmarks');
       const mergedList = [
         ...calcList.default.map(item => ({
@@ -43,8 +44,12 @@ if (settingsStore.get('bookmarks').length > 0) {
           link: '/conditions/' + item.key,
           title: item.title,
         })),
-        ...treatmentList.default.map(item => ({
-          link: '/treatments/' + item.key,
+        ...investigationList.default.map(item => ({
+          link: '/investigations/' + item.key,
+          title: item.title,
+        })),
+        ...managementList.default.map(item => ({
+          link: '/managements/' + item.key,
           title: item.title,
         })),
       ];
@@ -95,10 +100,10 @@ function BookmarkItem({ link, title }: { link: string; title: string }) {
         <FaCalculator />
       ) : link.startsWith('/conditions') ? (
         <FaBookMedical />
-      ) : link.startsWith('/treatments') ? (
+      ) : link.startsWith('/investigations') ? (
+        <FaFlask />
+      ) : link.startsWith('/managements') ? (
         <FaSyringe />
-      ) : link.startsWith('/algorithms') ? (
-        <FaProjectDiagram />
       ) : (
         <FaSearch />
       )}

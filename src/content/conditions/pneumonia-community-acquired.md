@@ -50,7 +50,7 @@ keywords:
   - Mechanical ventilation if severe hypoxemia
 - Fluids for maintenance and dehydration
 - Organ support if septic
-- [Empirical antibiotics](../treatments/antibiotics#community-acquired-pneumonia)
+- [Empirical antibiotics](../managements/antibiotics#community-acquired-pneumonia)
 - Antivirals
   - Oseltamivir for influenza
   - Remdesivir for COVID-19

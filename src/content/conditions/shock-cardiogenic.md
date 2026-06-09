@@ -35,7 +35,7 @@ keywords:
 ### Improve coronary perfusion
 
 - Increase diastolic blood pressure
-  - [Norepinephrine](../treatments/vasopressors#norepinephrine) - vasoconstriction without chronotropy
+  - [Norepinephrine](../managements/vasopressors#norepinephrine) - vasoconstriction without chronotropy
   - Intra-aortic balloon pump (IABP)
 - Vasodilators **only if normotensive**
   - Nitroglycerin (TNG)
@@ -47,5 +47,5 @@ keywords:
 ### Increase cardiac output
 
 - Careful fluids
-  - [100 ml crystalloid bolus](../treatments/fluids#cardiogenic-shock)
+  - [100 ml crystalloid bolus](../managements/fluids#cardiogenic-shock)
   - **Avoid fluids in pulmonary edema**

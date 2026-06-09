@@ -32,9 +32,9 @@ keywords:
 
 #### Brain tissue
 
-- [Mannitol](../treatments/osmotherapy#mannitol) to reduce cerebral edema
+- [Mannitol](../managements/osmotherapy#mannitol) to reduce cerebral edema
   - Osmotic diuretic, avoid if hypotensive
-- [Hypertonic saline](../treatments/osmotherapy#hypertonic-saline) if hypotensive
+- [Hypertonic saline](../managements/osmotherapy#hypertonic-saline) if hypotensive
 
 #### Cerebrospinal fluid
 

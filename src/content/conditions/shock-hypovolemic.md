@@ -40,7 +40,7 @@ keywords:
 
 ### Fluid resuscitation
 
-- [Small volume blood loss (<1 L)](../treatments/fluids#hypovolemic-shock)
+- [Small volume blood loss (<1 L)](../managements/fluids#hypovolemic-shock)
   - Colloid replacement 1-1.5 times the volume lost
   - Crystalloid replacement 1.5-2 times the volume lost
 - Large volume blood loss

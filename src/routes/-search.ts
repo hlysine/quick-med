@@ -1,15 +1,15 @@
-import treatmentsIndex from './treatments/-list.gen.json';
+import managementsIndex from './managements/-list.gen.json';
 import conditionsIndex from './conditions/-list.gen.json';
 import calcIndex from './calc/-list.gen.json';
-import algorithmsIndex from './algorithms/-list.gen.json';
+import investigationsIndex from './investigations/-list.gen.json';
 import MiniSearch, { SearchResult } from 'minisearch';
 import { markdownToText } from '../utils/markdownUtils';
 import { r } from 'readable-regexp';
 
 console.time('Search Indexing');
 
-const treatmentsContent = Object.entries(
-  import.meta.glob<true, string, string>('../content/treatments/*.md', {
+const calcContent = Object.entries(
+  import.meta.glob<true, string, string>('../content/calc/*.md', {
     query: '?raw',
     import: 'default',
     eager: true,
@@ -22,15 +22,15 @@ const conditionsContent = Object.entries(
     eager: true,
   })
 );
-const calcContent = Object.entries(
-  import.meta.glob<true, string, string>('../content/calc/*.md', {
+const investigationsContent = Object.entries(
+  import.meta.glob<true, string, string>('../content/investigations/*.md', {
     query: '?raw',
     import: 'default',
     eager: true,
   })
 );
-const algorithmsContent = Object.entries(
-  import.meta.glob<true, string, string>('../content/algorithms/*.md', {
+const managementsContent = Object.entries(
+  import.meta.glob<true, string, string>('../content/managements/*.md', {
     query: '?raw',
     import: 'default',
     eager: true,
@@ -67,17 +67,17 @@ function addToSearchStore(
   searchIndex.push(searchEntry);
 }
 
-treatmentsIndex.forEach(entry => {
-  addToSearchStore('treatments', treatmentsContent, entry);
+calcIndex.forEach(entry => {
+  addToSearchStore('calc', calcContent, entry);
 });
 conditionsIndex.forEach(entry => {
   addToSearchStore('conditions', conditionsContent, entry);
 });
-calcIndex.forEach(entry => {
-  addToSearchStore('calc', calcContent, entry);
+investigationsIndex.forEach(entry => {
+  addToSearchStore('investigations', investigationsContent, entry);
 });
-algorithmsIndex.forEach(entry => {
-  addToSearchStore('algorithms', algorithmsContent, entry);
+managementsIndex.forEach(entry => {
+  addToSearchStore('managements', managementsContent, entry);
 });
 
 const miniSearch = new MiniSearch({

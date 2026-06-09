@@ -6,15 +6,15 @@ import {
   FaCog,
   FaBolt,
   FaHeartbeat,
-  FaProjectDiagram,
+  FaFlask,
 } from 'react-icons/fa';
 import { IconType } from 'react-icons/lib';
 
 export enum TabKeys {
   Calculators = '/calc',
   Conditions = '/conditions',
-  Treatments = '/treatments',
-  Algorithms = '/algorithms',
+  Investigations = '/investigations',
+  Managements = '/managements',
   Search = '/search',
   Settings = '/settings',
 }
@@ -40,15 +40,15 @@ export const tabs: Tab[] = [
     dock: true,
   },
   {
-    name: 'Treatments',
-    icon: FaSyringe,
-    to: TabKeys.Treatments,
+    name: 'Ix',
+    icon: FaFlask,
+    to: TabKeys.Investigations,
     dock: true,
   },
   {
-    name: 'Algorithms',
-    icon: FaProjectDiagram,
-    to: TabKeys.Algorithms,
+    name: 'Mx',
+    icon: FaSyringe,
+    to: TabKeys.Managements,
     dock: true,
   },
   {
@@ -69,7 +69,7 @@ export const pinnedTabs: Tab[] = [
   {
     name: 'Epinephrine',
     icon: FaSyringe,
-    to: '/treatments/epinephrine',
+    to: '/managements/epinephrine',
     dock: false,
   },
   {
@@ -81,7 +81,7 @@ export const pinnedTabs: Tab[] = [
   {
     name: 'Cardioversion / defibrillation',
     icon: FaBolt,
-    to: '/treatments/cardioversion-defibrillation',
+    to: '/managements/cardioversion-defibrillation',
     dock: false,
   },
 ];

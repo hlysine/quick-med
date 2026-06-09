@@ -37,21 +37,21 @@ keywords:
     - Vagal maneuvers
       - Valsalva maneuver
       - Carotid sinus massage
-    - [Adenosine 6 mg IV bolus](../treatments/stable-anti-arrhythmics#adenosine)
+    - [Adenosine 6 mg IV bolus](../managements/stable-anti-arrhythmics#adenosine)
       - Avoid if delta wave in previous ECG
   - Assume VT otherwise
-    - [IV amiodarone](../treatments/stable-anti-arrhythmics#amiodarone)
-    - [IV lignocaine](../treatments/stable-anti-arrhythmics#lignocaine)
-    - [IV procainamide](../treatments/stable-anti-arrhythmics#procainamide)
+    - [IV amiodarone](../managements/stable-anti-arrhythmics#amiodarone)
+    - [IV lignocaine](../managements/stable-anti-arrhythmics#lignocaine)
+    - [IV procainamide](../managements/stable-anti-arrhythmics#procainamide)
   - [Cardioversion](tachyarrhythmia-unstable)
 
 ## Wide complex SVT
 
 - Management
-  - [Adenosine 6 mg IV bolus](../treatments/stable-anti-arrhythmics#adenosine)
+  - [Adenosine 6 mg IV bolus](../managements/stable-anti-arrhythmics#adenosine)
     - Avoid if delta wave in previous ECG
-  - [IV procainamide](../treatments/stable-anti-arrhythmics#procainamide)
-    or [IV amiodarone](../treatments/stable-anti-arrhythmics#amiodarone)
+  - [IV procainamide](../managements/stable-anti-arrhythmics#procainamide)
+    or [IV amiodarone](../managements/stable-anti-arrhythmics#amiodarone)
   - [Cardioversion](tachyarrhythmia-unstable)
 
 ## Non-sustained monomorphic VT
@@ -66,7 +66,7 @@ keywords:
   - High risk of recurrence
 - If unstable - [synchronized cardioversion](tachyarrhythmia-unstable)
 - If stable:
-  - [IV amiodarone](../treatments/stable-anti-arrhythmics#amiodarone), [sotalol](../treatments/stable-anti-arrhythmics#sotalol), [procainamide](../treatments/stable-anti-arrhythmics#procainamide)
+  - [IV amiodarone](../managements/stable-anti-arrhythmics#amiodarone), [sotalol](../managements/stable-anti-arrhythmics#sotalol), [procainamide](../managements/stable-anti-arrhythmics#procainamide)
   - Anti-arrhythmia pacing
   - Refer to cardiology for ICD implantation
 
@@ -106,5 +106,5 @@ keywords:
     - Emergency coronary angiography
   - IV beta-blocker
   - Intra-aortic balloon pump
-  - IV [amiodarone](../treatments/stable-anti-arrhythmics#amiodarone)
-    or [lignocaine](../treatments/stable-anti-arrhythmics#lignocaine) if above measures contraindicated
+  - IV [amiodarone](../managements/stable-anti-arrhythmics#amiodarone)
+    or [lignocaine](../managements/stable-anti-arrhythmics#lignocaine) if above measures contraindicated

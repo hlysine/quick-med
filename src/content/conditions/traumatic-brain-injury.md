@@ -21,7 +21,7 @@ keywords:
 - Most patients require intubation
   - Prevent aspiration
   - Ensure adequate oxygenation
-- No [mannitol](../treatments/osmotherapy) or [hyperventilation](cerebral-injury#circulating-blood) unless herniation
+- No [mannitol](../managements/osmotherapy) or [hyperventilation](cerebral-injury#circulating-blood) unless herniation
 
 ### Rapid diagnosis
 

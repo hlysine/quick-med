@@ -69,14 +69,14 @@ keywords:
 - **Oxygen**
   - Step up to ventilator with low tidal volume in ARDS
 - **Fluid resuscitation**
-  - 30-by-3 crystalloid - [30ml/kg crystalloid over 3 hours](../treatments/fluids#septic-shock)
+  - 30-by-3 crystalloid - [30ml/kg crystalloid over 3 hours](../managements/fluids#septic-shock)
     - Assess response with mental state and urine output
     - Consider 30-by-6 for patients with congestive heart failure
     - **Disregard fluid in-out balance in the first 24 hours**
-  - [Vasopressors](../treatments/vasopressors#norepinephrine) if hypotensive despite fluids
+  - [Vasopressors](../managements/vasopressors#norepinephrine) if hypotensive despite fluids
     - Prefer norepinephrine, otherwise dopamine or epinephrine
     - Target MAP 65 mmHg
-  - [Dobutamine](../treatments/vasopressors#dobutamine) if low perfusion despite adequate MAP
+  - [Dobutamine](../managements/vasopressors#dobutamine) if low perfusion despite adequate MAP
 
 ### Early source control
 

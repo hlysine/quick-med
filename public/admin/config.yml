@@ -10,16 +10,6 @@ public_folder: 'assets'
 publish_mode: editorial_workflow
 open_authoring: true
 collections:
-  - name: 'algorithms'
-    label: 'Algorithms'
-    folder: 'src/content/algorithms'
-    preview_path: 'algorithms/{{slug}}'
-    create: true
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Section', name: 'section', widget: 'string' }
-      - { label: 'Keywords', name: 'keywords', widget: 'list' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'calc'
     label: 'Calculators'
     folder: 'src/content/calc'
@@ -40,10 +30,20 @@ collections:
       - { label: 'Section', name: 'section', widget: 'string' }
       - { label: 'Keywords', name: 'keywords', widget: 'list' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-  - name: 'treatments'
-    label: 'Treatments'
-    folder: 'src/content/treatments'
-    preview_path: 'treatments/{{slug}}'
+  - name: 'investigations'
+    label: 'Investigations'
+    folder: 'src/content/investigations'
+    preview_path: 'investigations/{{slug}}'
+    create: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Section', name: 'section', widget: 'string' }
+      - { label: 'Keywords', name: 'keywords', widget: 'list' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'managements'
+    label: 'Managements'
+    folder: 'src/content/managements'
+    preview_path: 'managements/{{slug}}'
     create: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }

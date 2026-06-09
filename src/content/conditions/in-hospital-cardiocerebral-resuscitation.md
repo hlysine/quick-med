@@ -33,15 +33,15 @@ keywords:
 
 ## Defibrillation
 
-- [**Biphasic defibrillation** - 150-200 J (manufacturer recommendation)](../treatments/cardioversion-defibrillation)
-- [**Monophasic defibrillation** - 360 J](../treatments/cardioversion-defibrillation)
+- [**Biphasic defibrillation** - 150-200 J (manufacturer recommendation)](../managements/cardioversion-defibrillation)
+- [**Monophasic defibrillation** - 360 J](../managements/cardioversion-defibrillation)
 
 ## Medications
 
-- [Epinephrine](../treatments/epinephrine)
+- [Epinephrine](../managements/epinephrine)
   - 1 mg 1:10,000 IV every every second cycle (every 3-5 minutes)
   - Give immediately for non-shockable rhythms
-- [Anti-arrhythmics](../treatments/arrest-anti-arrhythmics)
+- [Anti-arrhythmics](../managements/arrest-anti-arrhythmics)
   - **Amiodarone**
     - 300 mg IV bolus after 3rd shock
     - 150 mg IV bolus after 5th shock
@@ -54,7 +54,7 @@ keywords:
 - Hypothermia
   - Defer defibrillation and medications until core temperature >30°C
 - Opioid overdose
-  - [**Empirical naloxone**](../treatments/naloxone)
+  - [**Empirical naloxone**](../managements/naloxone)
 - Pregnancy
   - Left lateral decubitus position
   - Manual left uterine displacement
@@ -125,7 +125,7 @@ keywords:
   - Hypothermia
 - Pinpoint pupils
   - Opioid intoxication
-  - [**1.2mg IV naloxone**](../treatments/naloxone)
+  - [**1.2mg IV naloxone**](../managements/naloxone)
 - Unequal pupils
   - Intracranial bleed/stroke
 - Blood in mouth
@@ -164,7 +164,7 @@ keywords:
   - Aortic rupture
 - Femoral vein pits
   - IVDU
-  - [**Empirical naloxone**](../treatments/naloxone)
+  - [**Empirical naloxone**](../managements/naloxone)
 
 #### Lower limbs
 
@@ -182,7 +182,7 @@ keywords:
   - Target SpO2 90-98%
 - Circulation
   - Target MAP >=65 mmHg
-  - [IV fluids](../treatments/fluids.md) or [vasopressors](../treatments/vasopressors.md)
+  - [IV fluids](../managements/fluids.md) or [vasopressors](../managements/vasopressors.md)
 - Diagnostics
   - 12-lead ECG
   - Diagnostic imaging as indicated

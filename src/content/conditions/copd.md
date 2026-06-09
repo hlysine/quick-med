@@ -31,13 +31,13 @@ keywords:
 
 #### Bronchodilation
 
-- [Inhaled beta-2 agonists](../treatments/bronchodilators)
-- [Inhaled anticholinergics](../treatments/bronchodilators)
+- [Inhaled beta-2 agonists](../managements/bronchodilators)
+- [Inhaled anticholinergics](../managements/bronchodilators)
 - Theophylline not recommended
 
 #### Reduce inflammation
 
-- [Corticosteroids](../treatments/corticosteroids)
+- [Corticosteroids](../managements/corticosteroids)
 
 ### Treat underlying cause of exacerbation
 
