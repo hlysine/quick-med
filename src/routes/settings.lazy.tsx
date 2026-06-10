@@ -69,6 +69,19 @@ function ClearBookmarks() {
   );
 }
 
+function SuggestEdits() {
+  return (
+    <div className="w-full flex flex-col">
+      <a className="btn" href="/admin">
+        Suggest edits
+      </a>
+      <p className="text-sm text-error mt-2">
+        Your edits will be saved as public drafts and published after review.
+      </p>
+    </div>
+  );
+}
+
 function Settings() {
   const isPWA = useMemo(() => {
     return ['fullscreen', 'standalone', 'minimal-ui'].some(
@@ -98,7 +111,7 @@ function Settings() {
         <p className="text-sm">- Up to date</p>
       )}
       <div className="divider" />
-      <div className="flex flex-col gap-4 w-full max-w-100 self-center">
+      <div className="flex flex-col gap-8 w-full max-w-100 self-center">
         <h2 className="text-2xl font-bold">Settings</h2>
         <SettingsToggle
           key="isDark"
@@ -106,9 +119,7 @@ function Settings() {
           label="Use Dark Mode"
         />
         <ClearBookmarks />
-        <a className="btn" href="/admin">
-          Edit content
-        </a>
+        <SuggestEdits />
       </div>
     </div>
   );
