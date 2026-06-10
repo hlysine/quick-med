@@ -1,4 +1,4 @@
-import { createLazyFileRoute } from '@tanstack/react-router';
+import { createFileRoute } from '@tanstack/react-router';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import { Suspense, use, useEffect, useMemo, useRef, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
@@ -66,7 +66,9 @@ function SearchResults({ results }: { results: PageResult[] }) {
 
 let savedQuery = '';
 
-const searchPromise = import('./-search').then(mod => mod.search);
+const searchPromise = new Promise(resolve => setTimeout(resolve, 0))
+  .then(() => import('./-search'))
+  .then(mod => mod.search);
 
 function Search({ query }: { query: string }) {
   const search = use(searchPromise);
@@ -121,6 +123,6 @@ function SearchPage() {
   );
 }
 
-export const Route = createLazyFileRoute('/search')({
+export const Route = createFileRoute('/search')({
   component: SearchPage,
 });

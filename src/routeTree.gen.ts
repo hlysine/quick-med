@@ -13,6 +13,7 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as SearchImport } from './routes/search'
 import { Route as IndexImport } from './routes/index'
 import { Route as ManagementsIndexImport } from './routes/managements/index'
 import { Route as InvestigationsIndexImport } from './routes/investigations/index'
@@ -38,7 +39,6 @@ import { Route as CalcAcuteRespiratoryAcidosisImport } from './routes/calc/acute
 // Create Virtual Routes
 
 const SettingsLazyImport = createFileRoute('/settings')()
-const SearchLazyImport = createFileRoute('/search')()
 
 // Create/Update Routes
 
@@ -48,11 +48,11 @@ const SettingsLazyRoute = SettingsLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/settings.lazy').then((d) => d.Route))
 
-const SearchLazyRoute = SearchLazyImport.update({
+const SearchRoute = SearchImport.update({
   id: '/search',
   path: '/search',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/search.lazy').then((d) => d.Route))
+} as any)
 
 const IndexRoute = IndexImport.update({
   id: '/',
@@ -199,7 +199,7 @@ declare module '@tanstack/react-router' {
       id: '/search'
       path: '/search'
       fullPath: '/search'
-      preLoaderRoute: typeof SearchLazyImport
+      preLoaderRoute: typeof SearchImport
       parentRoute: typeof rootRoute
     }
     '/settings': {
@@ -356,7 +356,7 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/search': typeof SearchLazyRoute
+  '/search': typeof SearchRoute
   '/settings': typeof SettingsLazyRoute
   '/calc/acute-respiratory-acidosis': typeof CalcAcuteRespiratoryAcidosisRoute
   '/calc/acute-respiratory-alkalosis': typeof CalcAcuteRespiratoryAlkalosisRoute
@@ -382,7 +382,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/search': typeof SearchLazyRoute
+  '/search': typeof SearchRoute
   '/settings': typeof SettingsLazyRoute
   '/calc/acute-respiratory-acidosis': typeof CalcAcuteRespiratoryAcidosisRoute
   '/calc/acute-respiratory-alkalosis': typeof CalcAcuteRespiratoryAlkalosisRoute
@@ -409,7 +409,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/search': typeof SearchLazyRoute
+  '/search': typeof SearchRoute
   '/settings': typeof SettingsLazyRoute
   '/calc/acute-respiratory-acidosis': typeof CalcAcuteRespiratoryAcidosisRoute
   '/calc/acute-respiratory-alkalosis': typeof CalcAcuteRespiratoryAlkalosisRoute
@@ -514,7 +514,7 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  SearchLazyRoute: typeof SearchLazyRoute
+  SearchRoute: typeof SearchRoute
   SettingsLazyRoute: typeof SettingsLazyRoute
   CalcAcuteRespiratoryAcidosisRoute: typeof CalcAcuteRespiratoryAcidosisRoute
   CalcAcuteRespiratoryAlkalosisRoute: typeof CalcAcuteRespiratoryAlkalosisRoute
@@ -540,7 +540,7 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  SearchLazyRoute: SearchLazyRoute,
+  SearchRoute: SearchRoute,
   SettingsLazyRoute: SettingsLazyRoute,
   CalcAcuteRespiratoryAcidosisRoute: CalcAcuteRespiratoryAcidosisRoute,
   CalcAcuteRespiratoryAlkalosisRoute: CalcAcuteRespiratoryAlkalosisRoute,
@@ -603,7 +603,7 @@ export const routeTree = rootRoute
       "filePath": "index.tsx"
     },
     "/search": {
-      "filePath": "search.lazy.tsx"
+      "filePath": "search.tsx"
     },
     "/settings": {
       "filePath": "settings.lazy.tsx"
