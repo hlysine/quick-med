@@ -1,5 +1,13 @@
 [
   {
+    "title": "Blood taking",
+    "section": "Bloods",
+    "keywords": [
+      "venepuncture"
+    ],
+    "key": "blood-taking"
+  },
+  {
     "title": "STEMI",
     "section": "ECG",
     "keywords": [
