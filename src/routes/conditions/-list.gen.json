@@ -1,5 +1,272 @@
 [
   {
+    "title": "Acute Deranged Liver Function",
+    "section": "Laboratory Abnormalities",
+    "keywords": [
+      "liver function",
+      "LFT",
+      "hepatitis",
+      "cholestasis",
+      "jaundice"
+    ],
+    "key": "acute-deranged-liver-function"
+  },
+  {
+    "title": "Acute Kidney Injury (AKI)",
+    "section": "Laboratory Abnormalities",
+    "keywords": [
+      "AKI",
+      "acute kidney injury",
+      "creatinine",
+      "oliguria",
+      "renal failure"
+    ],
+    "key": "aki"
+  },
+  {
+    "title": "Anaemia / Hb Drop",
+    "section": "Laboratory Abnormalities",
+    "keywords": [
+      "anaemia",
+      "haemoglobin",
+      "transfusion",
+      "Hb drop",
+      "blood transfusion"
+    ],
+    "key": "anaemia-hb-drop"
+  },
+  {
+    "title": "Blood Gas Abnormalities",
+    "section": "Laboratory Abnormalities",
+    "keywords": [
+      "ABG",
+      "blood gas",
+      "acidosis",
+      "alkalosis",
+      "respiratory failure"
+    ],
+    "key": "blood-gas-abnormalities"
+  },
+  {
+    "title": "Abnormalities in Calcium / Magnesium / Phosphate",
+    "section": "Laboratory Abnormalities",
+    "keywords": [
+      "hypercalcaemia",
+      "hypocalcaemia",
+      "hypomagnesaemia",
+      "phosphate",
+      "calcium"
+    ],
+    "key": "calcium-magnesium-phosphate"
+  },
+  {
+    "title": "Elevated Ammonia",
+    "section": "Laboratory Abnormalities",
+    "keywords": [
+      "ammonia",
+      "hepatic encephalopathy",
+      "lactulose",
+      "liver failure",
+      "HE"
+    ],
+    "key": "elevated-ammonia"
+  },
+  {
+    "title": "Elevated D-dimer",
+    "section": "Laboratory Abnormalities",
+    "keywords": [
+      "D-dimer",
+      "PE",
+      "DVT",
+      "DIC",
+      "thromboembolism"
+    ],
+    "key": "elevated-d-dimer"
+  },
+  {
+    "title": "Elevated INR",
+    "section": "Laboratory Abnormalities",
+    "keywords": [
+      "INR",
+      "coagulopathy",
+      "warfarin",
+      "vitamin K",
+      "FFP"
+    ],
+    "key": "elevated-inr"
+  },
+  {
+    "title": "Elevated TnI / TnT / CK",
+    "section": "Laboratory Abnormalities",
+    "keywords": [
+      "troponin",
+      "ACS",
+      "STEMI",
+      "myocardial infarction",
+      "cardiac enzymes"
+    ],
+    "key": "elevated-tni-tnt-ck"
+  },
+  {
+    "title": "Hyperkalaemia",
+    "section": "Laboratory Abnormalities",
+    "keywords": [
+      "hyperkalaemia",
+      "potassium",
+      "Resonium",
+      "calcium gluconate",
+      "DI drip"
+    ],
+    "key": "hyperkalaemia"
+  },
+  {
+    "title": "Hypernatraemia",
+    "section": "Laboratory Abnormalities",
+    "keywords": [
+      "hypernatraemia",
+      "sodium",
+      "dehydration",
+      "diabetes insipidus",
+      "hyperNa"
+    ],
+    "key": "hypernatraemia"
+  },
+  {
+    "title": "Hypokalaemia",
+    "section": "Laboratory Abnormalities",
+    "keywords": [
+      "hypokalaemia",
+      "potassium",
+      "KCl",
+      "low potassium",
+      "cardiac arrhythmia"
+    ],
+    "key": "hypokalaemia"
+  },
+  {
+    "title": "Hyponatraemia",
+    "section": "Laboratory Abnormalities",
+    "keywords": [
+      "hyponatraemia",
+      "sodium",
+      "SIADH",
+      "fluid restriction",
+      "salt"
+    ],
+    "key": "hyponatraemia"
+  },
+  {
+    "title": "Thrombocytopenia",
+    "section": "Laboratory Abnormalities",
+    "keywords": [
+      "thrombocytopenia",
+      "platelets",
+      "low platelets",
+      "DIC",
+      "TTP"
+    ],
+    "key": "thrombocytopenia"
+  },
+  {
+    "title": "Bradycardia",
+    "section": "Vitals",
+    "keywords": [
+      "slow heart rate",
+      "AV block",
+      "atropine",
+      "pacing",
+      "arrhythmia"
+    ],
+    "key": "bradycardia"
+  },
+  {
+    "title": "Cardiac Arrest",
+    "section": "Vitals",
+    "keywords": [
+      "CPR",
+      "ACLS",
+      "resuscitation",
+      "VF",
+      "pulseless",
+      "ROSC"
+    ],
+    "key": "cardiac-arrest"
+  },
+  {
+    "title": "Certification of Death",
+    "section": "Vitals",
+    "keywords": [
+      "death",
+      "certification",
+      "pacemaker",
+      "ICD",
+      "DNACPR"
+    ],
+    "key": "certification-of-death"
+  },
+  {
+    "title": "Decreased GCS",
+    "section": "Vitals",
+    "keywords": [
+      "consciousness",
+      "coma",
+      "GCS",
+      "neurological",
+      "altered mental status"
+    ],
+    "key": "decreased-gcs"
+  },
+  {
+    "title": "Desaturation",
+    "section": "Vitals",
+    "keywords": [
+      "SpO2",
+      "oxygen",
+      "respiratory failure",
+      "desat",
+      "hypoxia"
+    ],
+    "key": "desaturation"
+  },
+  {
+    "title": "Fever",
+    "section": "Vitals",
+    "keywords": [
+      "temperature",
+      "sepsis",
+      "infection",
+      "neutropenic fever",
+      "antibiotics"
+    ],
+    "key": "fever"
+  },
+  {
+    "title": "H'stix Abnormalities",
+    "section": "Vitals",
+    "keywords": [
+      "blood glucose",
+      "hyperglycaemia",
+      "hypoglycaemia",
+      "DKA",
+      "HHS",
+      "diabetes"
+    ],
+    "key": "hstix-abnormalities"
+  },
+  {
+    "title": "Hypertension",
+    "section": "Vitals",
+    "keywords": [
+      "high blood pressure",
+      "hypertensive crisis",
+      "end organ damage",
+      "antihypertensive",
+      "SBP",
+      "stroke"
+    ],
+    "key": "hypertension"
+  },
+  {
     "title": "Hypotension",
     "section": "Vitals",
     "keywords": [
@@ -11,5 +278,604 @@
       "SBP"
     ],
     "key": "hypotension"
+  },
+  {
+    "title": "Hypothermia",
+    "section": "Vitals",
+    "keywords": [
+      "temperature",
+      "sepsis",
+      "hypothyroid",
+      "rewarming"
+    ],
+    "key": "hypothermia"
+  },
+  {
+    "title": "Tachycardia",
+    "section": "Vitals",
+    "keywords": [
+      "fast heart rate",
+      "SVT",
+      "atrial fibrillation",
+      "VT",
+      "cardioversion",
+      "arrhythmia"
+    ],
+    "key": "tachycardia"
+  },
+  {
+    "title": "Abdominal Pain",
+    "section": "Ward Complaints",
+    "keywords": [
+      "abdominal pain",
+      "peritonitis",
+      "acute abdomen",
+      "bowel obstruction",
+      "pancreatitis"
+    ],
+    "key": "abdominal-pain"
+  },
+  {
+    "title": "Anorectal Pain / Discharge",
+    "section": "Ward Complaints",
+    "keywords": [
+      "haemorrhoid",
+      "anal fissure",
+      "perianal abscess",
+      "anorectal",
+      "necrotising fasciitis"
+    ],
+    "key": "anorectal-pain-discharge"
+  },
+  {
+    "title": "Acute Retention of Urine (AROU)",
+    "section": "Ward Complaints",
+    "keywords": [
+      "urinary retention",
+      "AROU",
+      "BPH",
+      "foley",
+      "bladder outlet obstruction"
+    ],
+    "key": "arou"
+  },
+  {
+    "title": "CAPD Related Problems",
+    "section": "Ward Complaints",
+    "keywords": [
+      "CAPD",
+      "peritoneal dialysis",
+      "peritonitis",
+      "cloudy effluent",
+      "Tenckhoff"
+    ],
+    "key": "capd-related-problems"
+  },
+  {
+    "title": "Central Venous Catheter Management",
+    "section": "Ward Complaints",
+    "keywords": [
+      "CVC",
+      "central line",
+      "PICC",
+      "blood culture",
+      "line infection"
+    ],
+    "key": "central-venous-catheter-management"
+  },
+  {
+    "title": "Chest Drain Related Problems",
+    "section": "Ward Complaints",
+    "keywords": [
+      "chest drain",
+      "pneumothorax",
+      "pleural effusion",
+      "bubbling",
+      "haemothorax"
+    ],
+    "key": "chest-drain-related-problems"
+  },
+  {
+    "title": "Chest Pain",
+    "section": "Ward Complaints",
+    "keywords": [
+      "chest pain",
+      "ACS",
+      "angina",
+      "aortic dissection",
+      "pleuritic"
+    ],
+    "key": "chest-pain"
+  },
+  {
+    "title": "Coffee Ground Vomiting / Haematemesis / Tarry Stool",
+    "section": "Ward Complaints",
+    "keywords": [
+      "UGIB",
+      "haematemesis",
+      "melaena",
+      "GI bleed",
+      "varices"
+    ],
+    "key": "coffee-ground-vomiting-haematemesis"
+  },
+  {
+    "title": "Confirm R/T Position",
+    "section": "Ward Complaints",
+    "keywords": [
+      "nasogastric tube",
+      "R/T",
+      "feeding tube",
+      "CXR",
+      "NG tube"
+    ],
+    "key": "confirm-rt-position"
+  },
+  {
+    "title": "Confusion / Delirium",
+    "section": "Ward Complaints",
+    "keywords": [
+      "delirium",
+      "confusion",
+      "encephalopathy",
+      "agitation",
+      "altered mental status"
+    ],
+    "key": "confusion-delirium"
+  },
+  {
+    "title": "Contrast Allergy Premedication",
+    "section": "Ward Complaints",
+    "keywords": [
+      "contrast allergy",
+      "premedication",
+      "prednisolone",
+      "hydrocortisone",
+      "CT scan"
+    ],
+    "key": "contrast-allergy-premedication"
+  },
+  {
+    "title": "COVID (SARS-CoV2)",
+    "section": "Ward Complaints",
+    "keywords": [
+      "COVID",
+      "coronavirus",
+      "antiviral",
+      "Paxlovid",
+      "remdesivir"
+    ],
+    "key": "covid"
+  },
+  {
+    "title": "Diarrhoea",
+    "section": "Ward Complaints",
+    "keywords": [
+      "diarrhoea",
+      "C diff",
+      "loose stool",
+      "gastroenteritis",
+      "bloody diarrhoea"
+    ],
+    "key": "diarrhoea"
+  },
+  {
+    "title": "Dizziness",
+    "section": "Ward Complaints",
+    "keywords": [
+      "vertigo",
+      "presyncope",
+      "dizziness",
+      "BPPV",
+      "vestibular"
+    ],
+    "key": "dizziness"
+  },
+  {
+    "title": "Dyspepsia",
+    "section": "Ward Complaints",
+    "keywords": [
+      "dyspepsia",
+      "GERD",
+      "peptic ulcer",
+      "H pylori",
+      "acid reflux"
+    ],
+    "key": "dyspepsia"
+  },
+  {
+    "title": "Dysuria",
+    "section": "Ward Complaints",
+    "keywords": [
+      "dysuria",
+      "UTI",
+      "urethritis",
+      "STI",
+      "urine burning"
+    ],
+    "key": "dysuria"
+  },
+  {
+    "title": "Ear Complaints",
+    "section": "Ward Complaints",
+    "keywords": [
+      "ear",
+      "otitis",
+      "hearing loss",
+      "vertigo",
+      "ENT"
+    ],
+    "key": "ear-complaints"
+  },
+  {
+    "title": "Eye Complaints",
+    "section": "Ward Complaints",
+    "keywords": [
+      "eye",
+      "visual acuity",
+      "red eye",
+      "glaucoma",
+      "ophthalmology"
+    ],
+    "key": "eye-complaints"
+  },
+  {
+    "title": "Fall",
+    "section": "Ward Complaints",
+    "keywords": [
+      "fall",
+      "head injury",
+      "fracture",
+      "trauma",
+      "neuro obs"
+    ],
+    "key": "fall"
+  },
+  {
+    "title": "General Drain Management",
+    "section": "Ward Complaints",
+    "keywords": [
+      "drain",
+      "surgical drain",
+      "PCN",
+      "PTBD",
+      "off drain"
+    ],
+    "key": "general-drain-management"
+  },
+  {
+    "title": "Haematuria",
+    "section": "Ward Complaints",
+    "keywords": [
+      "haematuria",
+      "blood in urine",
+      "bladder washout",
+      "clot retention",
+      "urological"
+    ],
+    "key": "haematuria"
+  },
+  {
+    "title": "Haemoptysis",
+    "section": "Ward Complaints",
+    "keywords": [
+      "haemoptysis",
+      "coughing blood",
+      "TB",
+      "bronchial artery embolization",
+      "lung bleeding"
+    ],
+    "key": "haemoptysis"
+  },
+  {
+    "title": "Headache",
+    "section": "Ward Complaints",
+    "keywords": [
+      "headache",
+      "SAH",
+      "meningitis",
+      "ICH",
+      "increased ICP"
+    ],
+    "key": "headache"
+  },
+  {
+    "title": "High R/T Output",
+    "section": "Ward Complaints",
+    "keywords": [
+      "nasogastric tube",
+      "R/T output",
+      "vomiting",
+      "gastric outlet obstruction",
+      "ileus"
+    ],
+    "key": "high-rt-output"
+  },
+  {
+    "title": "Influenza",
+    "section": "Ward Complaints",
+    "keywords": [
+      "influenza",
+      "flu",
+      "Tamiflu",
+      "oseltamivir",
+      "antiviral"
+    ],
+    "key": "influenza"
+  },
+  {
+    "title": "Insomnia",
+    "section": "Ward Complaints",
+    "keywords": [
+      "insomnia",
+      "sleep",
+      "antihistamine",
+      "Piriton"
+    ],
+    "key": "insomnia"
+  },
+  {
+    "title": "I/O Imbalance",
+    "section": "Ward Complaints",
+    "keywords": [
+      "fluid balance",
+      "input output",
+      "fluid overload",
+      "dehydration",
+      "oliguria"
+    ],
+    "key": "io-imbalance"
+  },
+  {
+    "title": "Joint Pain / Swelling",
+    "section": "Ward Complaints",
+    "keywords": [
+      "gout",
+      "arthritis",
+      "septic arthritis",
+      "joint swelling",
+      "arthrocentesis"
+    ],
+    "key": "joint-pain-swelling"
+  },
+  {
+    "title": "Loss of Consciousness (LOC)",
+    "section": "Ward Complaints",
+    "keywords": [
+      "syncope",
+      "LOC",
+      "loss of consciousness",
+      "vasovagal",
+      "cardiac syncope"
+    ],
+    "key": "loc"
+  },
+  {
+    "title": "Loin Pain",
+    "section": "Ward Complaints",
+    "keywords": [
+      "renal colic",
+      "kidney stone",
+      "loin pain",
+      "ureteric stone",
+      "pyelonephritis"
+    ],
+    "key": "loin-pain"
+  },
+  {
+    "title": "Low Back Pain",
+    "section": "Ward Complaints",
+    "keywords": [
+      "back pain",
+      "spine",
+      "cord compression",
+      "radiculopathy",
+      "fracture"
+    ],
+    "key": "low-back-pain"
+  },
+  {
+    "title": "Low Urine Output",
+    "section": "Ward Complaints",
+    "keywords": [
+      "oliguria",
+      "urine output",
+      "AKI",
+      "AROU",
+      "foley"
+    ],
+    "key": "low-urine-output"
+  },
+  {
+    "title": "Lower Limb Pain",
+    "section": "Ward Complaints",
+    "keywords": [
+      "DVT",
+      "limb ischaemia",
+      "cellulitis",
+      "compartment syndrome",
+      "necrotising fasciitis"
+    ],
+    "key": "lower-limb-pain"
+  },
+  {
+    "title": "Male Genitalia Problems",
+    "section": "Ward Complaints",
+    "keywords": [
+      "paraphimosis",
+      "scrotal pain",
+      "testicular torsion",
+      "Fournier's gangrene",
+      "epididymo-orchitis"
+    ],
+    "key": "male-genitalia-problems"
+  },
+  {
+    "title": "No Bowel Opening (NBO)",
+    "section": "Ward Complaints",
+    "keywords": [
+      "constipation",
+      "bowel obstruction",
+      "laxative",
+      "ileus",
+      "NBO"
+    ],
+    "key": "no-bowel-opening"
+  },
+  {
+    "title": "Numbness",
+    "section": "Ward Complaints",
+    "keywords": [
+      "numbness",
+      "neuropathy",
+      "sensory loss",
+      "spinal cord",
+      "stroke"
+    ],
+    "key": "numbness"
+  },
+  {
+    "title": "Palpitations",
+    "section": "Ward Complaints",
+    "keywords": [
+      "palpitations",
+      "arrhythmia",
+      "tachycardia",
+      "thyrotoxicosis",
+      "heart racing"
+    ],
+    "key": "palpitations"
+  },
+  {
+    "title": "Polyuria / Diuresis / Urinary Incontinence",
+    "section": "Ward Complaints",
+    "keywords": [
+      "polyuria",
+      "urinary incontinence",
+      "diabetes insipidus",
+      "diuresis",
+      "overflow"
+    ],
+    "key": "polyuria-diuresis-urinary-incontinence"
+  },
+  {
+    "title": "Poor Oral Intake",
+    "section": "Ward Complaints",
+    "keywords": [
+      "poor intake",
+      "dysphagia",
+      "nutrition",
+      "dehydration",
+      "appetite"
+    ],
+    "key": "poor-oral-intake"
+  },
+  {
+    "title": "PR Bleed",
+    "section": "Ward Complaints",
+    "keywords": [
+      "rectal bleeding",
+      "PR bleed",
+      "haemorrhoid",
+      "lower GI bleed",
+      "diverticular"
+    ],
+    "key": "pr-bleed"
+  },
+  {
+    "title": "Rash",
+    "section": "Ward Complaints",
+    "keywords": [
+      "rash",
+      "anaphylaxis",
+      "drug reaction",
+      "SJS",
+      "urticaria"
+    ],
+    "key": "rash"
+  },
+  {
+    "title": "Seizure",
+    "section": "Ward Complaints",
+    "keywords": [
+      "seizure",
+      "epilepsy",
+      "status epilepticus",
+      "benzodiazepine",
+      "Dilantin"
+    ],
+    "key": "seizure"
+  },
+  {
+    "title": "Shortness of Breath (SOB)",
+    "section": "Ward Complaints",
+    "keywords": [
+      "dyspnoea",
+      "shortness of breath",
+      "respiratory distress",
+      "SOB",
+      "pleural effusion"
+    ],
+    "key": "sob"
+  },
+  {
+    "title": "Stoma Problems",
+    "section": "Ward Complaints",
+    "keywords": [
+      "stoma",
+      "colostomy",
+      "ileostomy",
+      "high output",
+      "stoma prolapse"
+    ],
+    "key": "stoma-problems"
+  },
+  {
+    "title": "Transfusion Reaction",
+    "section": "Ward Complaints",
+    "keywords": [
+      "blood transfusion",
+      "TACO",
+      "TRALI",
+      "haemolysis",
+      "anaphylaxis"
+    ],
+    "key": "transfusion-reaction"
+  },
+  {
+    "title": "Upper Respiratory Symptoms",
+    "section": "Ward Complaints",
+    "keywords": [
+      "cough",
+      "URTI",
+      "cold",
+      "rhinorrhoea",
+      "sore throat"
+    ],
+    "key": "upper-respiratory-symptoms"
+  },
+  {
+    "title": "Vomiting",
+    "section": "Ward Complaints",
+    "keywords": [
+      "nausea",
+      "vomiting",
+      "N/V",
+      "antiemetic",
+      "intestinal obstruction"
+    ],
+    "key": "vomiting"
+  },
+  {
+    "title": "Weakness / Limb Power Drop",
+    "section": "Ward Complaints",
+    "keywords": [
+      "weakness",
+      "stroke",
+      "cord compression",
+      "paralysis",
+      "neuropathy"
+    ],
+    "key": "weakness-limb-power-drop"
   }
 ]
