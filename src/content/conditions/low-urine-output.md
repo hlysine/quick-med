@@ -9,6 +9,8 @@ keywords:
   - foley
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Low Urine Output (U/O)
 
 > **Oliguria is defined as U/O < 0.5 ml/kg/hr**

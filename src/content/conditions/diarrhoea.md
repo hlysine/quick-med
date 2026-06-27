@@ -9,6 +9,8 @@ keywords:
   - bloody diarrhoea
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Diarrhoea
 
 ## Causes

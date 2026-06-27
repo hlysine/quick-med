@@ -9,6 +9,8 @@ keywords:
   - respiratory failure
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Blood Gas Abnormalities
 
 ## First things first - is it an ABG or VBG?

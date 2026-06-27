@@ -9,6 +9,8 @@ keywords:
   - bladder outlet obstruction
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Acute Retention of Urine (AROU)
 
 > **Difficult painful voiding, with post-void residual urine (PVRU) > 300-350ml**

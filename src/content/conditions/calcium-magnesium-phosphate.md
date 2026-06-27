@@ -9,6 +9,8 @@ keywords:
   - calcium
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Abnormalities in Calcium / Magnesium / Phosphate
 
 ## Hypercalcaemia

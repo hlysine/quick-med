@@ -9,6 +9,8 @@ keywords:
   - necrotising fasciitis
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Anorectal Pain / Discharge
 
 ## Causes

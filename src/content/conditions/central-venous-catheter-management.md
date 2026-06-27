@@ -9,6 +9,8 @@ keywords:
   - line infection
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Central Venous Catheter Management
 
 ## Types of CVC you will see in ward

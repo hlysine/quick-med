@@ -9,6 +9,8 @@ keywords:
   - varices
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Coffee Ground Vomiting / Haematemesis / Tarry Stool
 
 ## Causes

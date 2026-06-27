@@ -9,6 +9,8 @@ keywords:
   - NBO
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # No Bowel Opening (NBO)
 
 > **Nurses may inform you if NBO x >3 days, or as requested by the patients**

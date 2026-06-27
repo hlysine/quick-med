@@ -9,6 +9,8 @@ keywords:
   - lung bleeding
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Haemoptysis
 
 > **Massive haemoptysis = >100ml/hr or >150ml/24hrs**

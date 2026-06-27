@@ -9,6 +9,8 @@ keywords:
   - TTP
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Thrombocytopenia
 
 * Most of the time has **known cause** (e.g. haematology patients)

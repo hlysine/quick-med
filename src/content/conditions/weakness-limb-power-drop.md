@@ -9,6 +9,8 @@ keywords:
   - neuropathy
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Weakness / Limb Power Drop
 
 ## Causes

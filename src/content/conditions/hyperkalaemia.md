@@ -9,6 +9,8 @@ keywords:
   - DI drip
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Hyperkalaemia
 
 > **Correct K quickly!**

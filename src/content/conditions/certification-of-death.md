@@ -9,6 +9,8 @@ keywords:
   - DNACPR
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Certification of Death
 
 * Check and document the following (*attach ECG/cardiac monitor rhythm strip to progress notes*):

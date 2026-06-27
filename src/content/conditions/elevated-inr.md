@@ -9,6 +9,8 @@ keywords:
   - FFP
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Elevated INR
 
 ## Approach to "abnormal" INR

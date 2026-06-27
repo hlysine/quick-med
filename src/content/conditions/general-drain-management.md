@@ -9,6 +9,8 @@ keywords:
   - off drain
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # General Drain Management
 
 ## Types of drains you will see in ward

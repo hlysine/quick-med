@@ -9,6 +9,8 @@ keywords:
   - altered mental status
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Confusion / Delirium
 
 ## Causes

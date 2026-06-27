@@ -9,6 +9,8 @@ keywords:
   - CT scan
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Contrast Allergy Premedication
 
 Each hospital has its own protocol, so the following is for reference only! Contact pharmacy if in doubt!

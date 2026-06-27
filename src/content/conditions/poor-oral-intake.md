@@ -9,6 +9,8 @@ keywords:
   - appetite
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Poor Oral Intake
 
 > **No strict definition, but nurses may inform you if intake <300 ml/day or <1/3 of meal**

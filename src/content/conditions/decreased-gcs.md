@@ -9,6 +9,8 @@ keywords:
   - altered mental status
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Decreased GCS
 
 ## Glasgow Coma Scale
@@ -70,7 +72,7 @@ keywords:
     * Epilepsy / drug use: seizure (can be **non-convulsive** status epilepticus!) / intoxication
 * Drug chart
 
-> **Tips for urgent consulting neurosurgery:**  
+> **Tips for urgent consulting neurosurgery:**
 > report **GCS (+ change in GCS) + PUPIL SIZE**
 
 ## Initial management
@@ -116,7 +118,7 @@ keywords:
 > * Even urgent CTB can take over half a day to queue!! But activating stroke protocol speeds it up
 > * Earlier informing allows earlier preparation for tPA / IR thrombectomy / OT – time is brain!
 
-> **Tips for commenting CT brain:** the most common template is **"no ICH/SOL/MLS"**  
+> **Tips for commenting CT brain:** the most common template is **"no ICH/SOL/MLS"**
 > **Compare both sides & correlate with clinical picture!** Important things to look for:
 > * **↑ ICP:** midline shift, compressed ventricles/sulci, hydrocephalus, uncal/tonsillar herniation
 > * **ICH, EDH, SDH** (*pay attention to falx*), **SAH** (*pay attention to suprasellar/ambient cisterns*)

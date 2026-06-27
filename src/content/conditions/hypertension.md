@@ -10,13 +10,15 @@ keywords:
   - stroke
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Hypertension
 
 > **Generally refers to SBP > 140, but usually nurses will inform you when SBP > 160**
 
 ## Hypertensive Urgency/ Crisis
-Most cases with high BP either have 1) chronic poorly controlled HTN or 2) only a transient BP spike which resolves when properly rested (and reversible causes e.g. pain/constipation/AROU treated).  
-*So usually asymptomatic HTN with SBP < 200 is not worrying (can just stat oral medications).*  
+Most cases with high BP either have 1) chronic poorly controlled HTN or 2) only a transient BP spike which resolves when properly rested (and reversible causes e.g. pain/constipation/AROU treated).
+*So usually asymptomatic HTN with SBP < 200 is not worrying (can just stat oral medications).*
 But important to rule out possible end organ damage (EOD) caused by HTN – **Head to Toe approach:**
 * Intracranial haemorrhage/ hypertensive encephalopathy
 * Ischaemic stroke

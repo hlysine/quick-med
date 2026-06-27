@@ -9,6 +9,8 @@ keywords:
   - acid reflux
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Dyspepsia
 
 ## Symptoms

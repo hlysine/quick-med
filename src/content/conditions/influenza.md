@@ -9,6 +9,8 @@ keywords:
   - antiviral
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Influenza (flu) A or B
 
 * **PO Oseltamivir (Tamiflu) 75mg BD x 5 days**

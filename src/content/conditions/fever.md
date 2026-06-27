@@ -9,6 +9,8 @@ keywords:
   - antibiotics
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Fever
 
 > **Usually nurses will inform you when Temp > 38°C**
@@ -58,7 +60,7 @@ Most units expect you to perform full septic workup when temp > 38°C, and teach
 > * MSK: cefazolin / ampicillin+cloxacillin
 > * SBP: cefotaxime/Rocephin / norfloxacin/ciprofloxacin
 > * CAPD peritonitis: IP cefazolin + ceftazidime; IV cefazolin + cefepime/gentamicin if septic
-> 
+>
 > *Refer to **IMPACT HK** guidelines! And **basing abx choice on relevant past c/st results is the best!***
 
 ## Common Pitfalls – NEUTROPENIC FEVER

@@ -9,6 +9,8 @@ keywords:
   - hyperNa
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Hypernatraemia
 
 > **Normal range: 135-145 mmol/L**

@@ -9,6 +9,8 @@ keywords:
   - cardiac enzymes
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Elevated TnI / TnT / CK
 
 > **TnI High = ACS??**

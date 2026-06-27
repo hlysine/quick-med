@@ -9,6 +9,8 @@ keywords:
   - sore throat
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Upper Respiratory Symptoms
 
 > **Cough, sore throat, rhinorrhoea, nasal congestion**

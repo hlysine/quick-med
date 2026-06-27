@@ -9,6 +9,8 @@ keywords:
   - haemothorax
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Chest Drain Related Problems
 
 ## Indications for Chest Drains

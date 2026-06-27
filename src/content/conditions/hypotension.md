@@ -10,6 +10,8 @@ keywords:
   - SBP
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Hypotension
 
 > **No strict definition, but usually refer to when SBP < 90**

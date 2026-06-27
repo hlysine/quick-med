@@ -9,6 +9,8 @@ keywords:
   - arthrocentesis
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Joint Pain / Swelling
 
 ## Causes

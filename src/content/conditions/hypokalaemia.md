@@ -9,6 +9,8 @@ keywords:
   - cardiac arrhythmia
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Hypokalaemia
 
 > Replacing K is the thing you do the most throughout houseman year...

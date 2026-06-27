@@ -10,6 +10,8 @@ keywords:
   - diabetes
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # H'stix Abnormalities
 
 > **Usually nurses will inform you when H'stix < 4 or > 12**
@@ -40,7 +42,7 @@ keywords:
     * Max daily dose 2000mg
     * Max daily dose 1000mg if eGFR 30-44
     * **C/I if eGFR <30 / liver failure / metabolic acidosis / tissue hypoxia (HF, resp failure, PE, sepsis) / alcoholism**
-    
+
 *(Can refer to HK primary care DM reference framework)*
 
 | World Health Organization diagnostic criteria for DM or pre-diabetes | DM | Pre-diabetes |

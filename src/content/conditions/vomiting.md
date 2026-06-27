@@ -9,6 +9,8 @@ keywords:
   - intestinal obstruction
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Vomiting
 
 ## Causes

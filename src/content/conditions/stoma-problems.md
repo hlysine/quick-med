@@ -9,6 +9,8 @@ keywords:
   - stoma prolapse
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Stoma Problems
 
 ## Stoma Bleeding

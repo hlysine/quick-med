@@ -9,6 +9,8 @@ keywords:
   - urological
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Haematuria
 
 > **Gross (red/pink urine) or microscopic (urine m'stix RBC +ve)**

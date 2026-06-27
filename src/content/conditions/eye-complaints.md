@@ -9,6 +9,8 @@ keywords:
   - ophthalmology
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Eye Complaints
 
 > Sorry, don't know OVS >< but:

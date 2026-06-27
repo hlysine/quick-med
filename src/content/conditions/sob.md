@@ -9,6 +9,8 @@ keywords:
   - pleural effusion
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Shortness of Breath (SOB)
 
 ## Causes

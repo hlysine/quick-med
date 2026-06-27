@@ -9,6 +9,8 @@ keywords:
   - stroke
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Numbness
 
 ## Causes

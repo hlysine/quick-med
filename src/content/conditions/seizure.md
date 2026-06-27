@@ -9,6 +9,8 @@ keywords:
   - Dilantin
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Seizure
 
 > **Can be focal or generalised, convulsive or non-convulsive (just impaired consciousness)!**

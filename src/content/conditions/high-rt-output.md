@@ -9,6 +9,8 @@ keywords:
   - ileus
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # High R/T Output
 
 > **No strict definition, but nurses may inform you if >50 ml / 4hrs**

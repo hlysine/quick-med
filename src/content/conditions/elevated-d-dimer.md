@@ -9,6 +9,8 @@ keywords:
   - thromboembolism
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Elevated D-dimer
 
 > **Important ddx: PE, DIC**

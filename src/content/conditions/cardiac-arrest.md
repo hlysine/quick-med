@@ -10,6 +10,8 @@ keywords:
   - ROSC
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Cardiac Arrest
 
 > **No pulse, no breathing**
@@ -31,7 +33,7 @@ If it is a DNACPR case, you will receive a phone call to **certify the patient**
 > **Tips for taking arrest blood:**
 > * Take from **femoral artery** (at the mid-inguinal point) using 20ml (or 10ml) syringe
 > * If cannot feel pulse: blind puncture by landmark and perform sunray motion while aspirating
-> * Memorise the bottle colours so you can take the blood first then go back to issue the tests:  
+> * Memorise the bottle colours so you can take the blood first then go back to issue the tests:
 >   1 blue (Na citrate), 3-4 green (Li heparin), 2 purple (K EDTA), 2 grey (Na fluoride) bottles
 > * Save the arrest blood template in your CMS account!
 
@@ -87,7 +89,7 @@ If it is a DNACPR case, you will receive a phone call to **certify the patient**
 
 **Drug Therapy:**
 * **Epinephrine IV/IO dose:** 1 mg every 3-5 minutes
-* **Amiodarone IV/IO dose:** First dose: 300 mg bolus. Second dose: 150 mg. OR  
+* **Amiodarone IV/IO dose:** First dose: 300 mg bolus. Second dose: 150 mg. OR
   **Lidocaine IV/IO dose:** First dose: 1-1.5 mg/kg. Second dose: 0.5-0.75 mg/kg.
 
 **Advanced Airway:**

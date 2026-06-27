@@ -10,6 +10,8 @@ keywords:
   - arrhythmia
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Tachycardia
 
 > **Typically refers to when HR >100**
@@ -21,7 +23,7 @@ keywords:
 
 > **Verbal order:** BPx1, ECG LLII, cardiac monitor
 
-> **Unstable tachycardia** = shock attributed to tachyarrhythmia (when HR >150) / altered consciousness / angina / acute decompensated heart failure -> **warrants electrical cardioversion**  
+> **Unstable tachycardia** = shock attributed to tachyarrhythmia (when HR >150) / altered consciousness / angina / acute decompensated heart failure -> **warrants electrical cardioversion**
 > *(in most hospitals, it might be better if you call MO before initiating electrical cardioversion)*
 
 ## Sinus / Atrial tachycardia

@@ -9,6 +9,8 @@ keywords:
   - hypoxia
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Desaturation
 
 > **No strict definition, but usually nurses will inform you when SpO2 <92%**
@@ -41,8 +43,8 @@ keywords:
 * What is the BP and HR?
 * Is the patient **alert**?
 
-> Sometimes nurses **empirically** give excess O2 when seeing the patient in respiratory distress, so –  
-> 1) there may not have been a genuine desat, 2) the degree of desat may be exaggerated.  
+> Sometimes nurses **empirically** give excess O2 when seeing the patient in respiratory distress, so –
+> 1) there may not have been a genuine desat, 2) the degree of desat may be exaggerated.
 > -> you may try to down-titrate O2 if SpO2 >97% when you arrive.
 
 ## First step: Titrate O2 (*usually done by nurse, but check it's correctly given!*)
@@ -164,7 +166,7 @@ keywords:
             * Urgent CTA +/- bronchial artery embolization
             * +/- urgent consult CTS x rigid bronchoscopy/lung resection
 
-> **Desat due to benzodiazepine:** 1) stop BZD, 2) r/o anaphylaxis, 3) airway manoeuvres and bag with BVM, 4) +/- IV flumazenil 0.2mg Q1min (up to 4 times), obs Q20min x3 for re-sedation  
+> **Desat due to benzodiazepine:** 1) stop BZD, 2) r/o anaphylaxis, 3) airway manoeuvres and bag with BVM, 4) +/- IV flumazenil 0.2mg Q1min (up to 4 times), obs Q20min x3 for re-sedation
 > *Note: flumazenil is **seldom given** for short-acting BZD like Dormicum (offset ~30min), as it may cause seizure (tricky to manage as you cannot give further BZD)*
 
 > **Desat due to opioid** (may have **pinpoint pupil** if overdose): 1) stop opioid, 2) r/o anaphylaxis, 3) airway manoeuvres and bag with BVM, 4) IV/IM/SC/ET naloxone 0.1-0.2mg Q2-3min, obs Q1H for re-narcotisation (naloxone onset 1-2min, half-life 1-1.5hr)

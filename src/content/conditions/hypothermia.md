@@ -8,6 +8,8 @@ keywords:
   - rewarming
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Hypothermia
 
 > **Usually nurses will inform you when Temp < 36°C**

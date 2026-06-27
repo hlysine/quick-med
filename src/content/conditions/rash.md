@@ -9,6 +9,8 @@ keywords:
   - urticaria
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Rash
 
 > Sorry, don't know DERM >< but:

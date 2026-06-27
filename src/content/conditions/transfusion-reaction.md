@@ -9,6 +9,8 @@ keywords:
   - anaphylaxis
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Transfusion Reaction
 
 > **Suspect if any discomfort during transfusion!**
@@ -75,7 +77,7 @@ with fever and chills                              • Perform CXR
 * If SOB/chest discomfort: + CXR, ECG, +/- ABG
 * Treat underlying cause (see above)
 
-> **Tip:** for **EACH** unit transfused, you can find in the progress notes (*mandatory for nurses to chart*) the patient's vitals:  
-> 1. Before start of transfusion  
-> 2. 15 minutes after start of transfusion  
+> **Tip:** for **EACH** unit transfused, you can find in the progress notes (*mandatory for nurses to chart*) the patient's vitals:
+> 1. Before start of transfusion
+> 2. 15 minutes after start of transfusion
 > 3. At the end of the transfusion

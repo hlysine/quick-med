@@ -9,6 +9,8 @@ keywords:
   - blood transfusion
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Anaemia / Hb Drop
 
 ## Important cut-offs:

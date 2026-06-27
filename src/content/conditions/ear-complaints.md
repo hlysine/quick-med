@@ -9,6 +9,8 @@ keywords:
   - ENT
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Ear Complaints
 
 > Sorry, also don't know ENT >< but:

@@ -9,6 +9,8 @@ keywords:
   - salt
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Hyponatraemia
 
 > **Normal range: 135-145 mmol/L**

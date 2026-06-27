@@ -9,6 +9,8 @@ keywords:
   - remdesivir
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # COVID (SARS-CoV2, nCoV)
 
 * Droplet precautions; no need isolation anymore

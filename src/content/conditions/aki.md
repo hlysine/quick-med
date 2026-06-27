@@ -9,6 +9,8 @@ keywords:
   - renal failure
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Acute Kidney Injury (AKI)
 
 > **Definition: increased in serum Cr to >1.5x baseline within 1 week, or U/O < 0.5 ml/kg/hr for 6 hrs**

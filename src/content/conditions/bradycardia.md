@@ -9,6 +9,8 @@ keywords:
   - arrhythmia
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Bradycardia
 
 > **Typically refer to when HR <60**

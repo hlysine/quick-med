@@ -9,6 +9,8 @@ keywords:
   - NG tube
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Confirm R/T Position
 
 ## Methods:

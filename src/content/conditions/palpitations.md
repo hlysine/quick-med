@@ -9,6 +9,8 @@ keywords:
   - heart racing
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Palpitations
 
 ## Causes

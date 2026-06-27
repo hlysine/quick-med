@@ -9,6 +9,8 @@ keywords:
   - cardiac syncope
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Loss of Consciousness (LOC)
 
 > **About retrospective assessment after transient LOC (if sustained coma, refer to section on ↓ GCS)**

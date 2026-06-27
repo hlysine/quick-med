@@ -9,6 +9,8 @@ keywords:
   - pancreatitis
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # Abdominal Pain
 
 ## Causes

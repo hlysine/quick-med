@@ -9,6 +9,8 @@ keywords:
   - oliguria
 ---
 
+**PROCESSED BY AI, UNVETTED**
+
 # I/O Imbalance
 
 > **Nurses may inform you if daily input-output difference >500ml**
