@@ -8,19 +8,36 @@ import CalcDivider from '../../components/calculator/CalcDivider';
 import CalcRadioInput from '../../components/calculator/CalcRadioInput';
 
 function GlasgowComaScale() {
-  const [motor, setMotor] = useState<number>(Number.NaN);
-  const [verbal, setVerbal] = useState<number>(Number.NaN);
   const [eye, setEye] = useState<number>(Number.NaN);
+  const [verbal, setVerbal] = useState<number>(Number.NaN);
+  const [motor, setMotor] = useState<number>(Number.NaN);
 
   let totalComputed = 0;
-  if (!Number.isNaN(motor)) {
-    totalComputed += motor + 1;
+  if (!Number.isNaN(eye)) {
+    totalComputed += eye + 1;
   }
   if (!Number.isNaN(verbal)) {
     totalComputed += verbal + 1;
   }
+  if (!Number.isNaN(motor)) {
+    totalComputed += motor + 1;
+  }
+
+  let text = '';
   if (!Number.isNaN(eye)) {
-    totalComputed += eye + 1;
+    text += `E${eye + 1} `;
+  } else {
+    text += 'EX ';
+  }
+  if (!Number.isNaN(verbal)) {
+    text += `V${verbal + 1} `;
+  } else {
+    text += 'VX ';
+  }
+  if (!Number.isNaN(motor)) {
+    text += `M${motor + 1} `;
+  } else {
+    text += 'MX ';
   }
 
   return (
@@ -28,39 +45,48 @@ function GlasgowComaScale() {
       <CalcHeader title="Glasgow Coma Scale" id="glasgow-coma-scale" />
       <CalcDivider>Result</CalcDivider>
       <CalcOutputPanel>
-        <CalcOutputEntry prefix="GCS" value={totalComputed} />
+        <CalcOutputEntry
+          prefix="GCS"
+          value={totalComputed}
+          bottomLabel={text}
+        />
       </CalcOutputPanel>
       <CalcDivider>Inputs</CalcDivider>
       <CalcRadioInput
-        value={motor}
+        value={eye}
         options={[
-          'No response',
-          'Extension to pain',
-          'Spastic flexion to pain',
-          'Withdrawal from pain',
-          'Localizes to pain',
-          'Obeys commands',
+          '1 - No response',
+          '2 - To pain',
+          '3 - To speech',
+          '4 - Spontaneous',
         ]}
-        onChange={setMotor}
-        topLabel="Motor response"
+        onChange={setEye}
+        topLabel="Eye opening"
       />
       <CalcRadioInput
         value={verbal}
         options={[
-          'No response',
-          'Incomprehensible sounds',
-          'Inappropriate words',
-          'Confused',
-          'Oriented',
+          '1 - No response',
+          '2 - Incomprehensible sounds',
+          '3 - Inappropriate words',
+          '4 - Confused',
+          '5 - Oriented',
         ]}
         onChange={setVerbal}
         topLabel="Verbal response"
       />
       <CalcRadioInput
-        value={eye}
-        options={['No response', 'To pain', 'To speech', 'Spontaneous']}
-        onChange={setEye}
-        topLabel="Eye opening"
+        value={motor}
+        options={[
+          '1 - No response',
+          '2 - Extension to pain',
+          '3 - Spastic flexion to pain',
+          '4 - Withdrawal from pain',
+          '5 - Localizes to pain',
+          '6 - Obeys commands',
+        ]}
+        onChange={setMotor}
+        topLabel="Motor response"
       />
     </Calculator>
   );
