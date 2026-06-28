@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react';
 import { FaPlus } from 'react-icons/fa';
-import { cn } from '../../utils/uiUtils';
+import { cn } from '../utils/uiUtils';
 
 type Urgency = 'high' | 'mid' | 'low';
 
@@ -30,9 +30,13 @@ function loadTodos(): TodoItem[] {
     if (!Array.isArray(parsed)) return [];
     return parsed
       .filter(
-        (item): item is TodoItem =>
+        (item: unknown): item is TodoItem =>
           typeof item === 'object' &&
           item !== null &&
+          'id' in item &&
+          'text' in item &&
+          'urgency' in item &&
+          'createdAt' in item &&
           typeof item.id === 'string' &&
           typeof item.text === 'string' &&
           (item.urgency === 'high' ||
@@ -197,7 +201,7 @@ function TodoRow({
       </span>
       <span
         className={cn(
-          'flex-1 text-base leading-snug break-words min-w-0',
+          'flex-1 text-base leading-snug wrap-break-word min-w-0',
           todo.done && 'line-through opacity-40'
         )}
       >
@@ -330,7 +334,7 @@ function TodoPage() {
   }, [sorted]);
 
   return (
-    <div className="flex-1 flex flex-col overflow-hidden">
+    <div className="flex-1 flex flex-col overflow-hidden w-full max-w-250 self-center">
       {/* Controls row */}
       <div className="flex items-center justify-between px-2 py-1 bg-base-100 border-b border-base-300">
         <div className="flex gap-1">
@@ -344,7 +348,7 @@ function TodoPage() {
               )}
               onClick={() => setSort(mode)}
             >
-              {mode === 'entry' ? 'Entry order' : 'By urgency'}
+              {mode === 'entry' ? 'By time' : 'By urgency'}
             </button>
           ))}
         </div>
@@ -400,7 +404,7 @@ function TodoPage() {
       </div>
 
       {/* Add task bar — pinned above keyboard */}
-      <div className="flex flex-col gap-1.5 p-2 bg-base-200 border-t border-base-300">
+      <div className="flex flex-col gap-1.5 p-2 bg-base-200 border-t border-x border-base-300">
         <input
           ref={inputRef}
           type="text"
@@ -467,6 +471,6 @@ function TodoPage() {
   );
 }
 
-export const Route = createFileRoute('/todo/')({
+export const Route = createFileRoute('/todo')({
   component: TodoPage,
 });

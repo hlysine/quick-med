@@ -13,9 +13,9 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as TodoImport } from './routes/todo'
 import { Route as SearchImport } from './routes/search'
 import { Route as IndexImport } from './routes/index'
-import { Route as TodoIndexImport } from './routes/todo/index'
 import { Route as ManagementsIndexImport } from './routes/managements/index'
 import { Route as InvestigationsIndexImport } from './routes/investigations/index'
 import { Route as ConditionsIndexImport } from './routes/conditions/index'
@@ -49,6 +49,12 @@ const SettingsLazyRoute = SettingsLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/settings.lazy').then((d) => d.Route))
 
+const TodoRoute = TodoImport.update({
+  id: '/todo',
+  path: '/todo',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const SearchRoute = SearchImport.update({
   id: '/search',
   path: '/search',
@@ -58,12 +64,6 @@ const SearchRoute = SearchImport.update({
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const TodoIndexRoute = TodoIndexImport.update({
-  id: '/todo/',
-  path: '/todo/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -207,6 +207,13 @@ declare module '@tanstack/react-router' {
       path: '/search'
       fullPath: '/search'
       preLoaderRoute: typeof SearchImport
+      parentRoute: typeof rootRoute
+    }
+    '/todo': {
+      id: '/todo'
+      path: '/todo'
+      fullPath: '/todo'
+      preLoaderRoute: typeof TodoImport
       parentRoute: typeof rootRoute
     }
     '/settings': {
@@ -356,13 +363,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagementsIndexImport
       parentRoute: typeof rootRoute
     }
-    '/todo/': {
-      id: '/todo/'
-      path: '/todo'
-      fullPath: '/todo'
-      preLoaderRoute: typeof TodoIndexImport
-      parentRoute: typeof rootRoute
-    }
   }
 }
 
@@ -371,6 +371,7 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/search': typeof SearchRoute
+  '/todo': typeof TodoRoute
   '/settings': typeof SettingsLazyRoute
   '/calc/acute-respiratory-acidosis': typeof CalcAcuteRespiratoryAcidosisRoute
   '/calc/acute-respiratory-alkalosis': typeof CalcAcuteRespiratoryAlkalosisRoute
@@ -392,12 +393,12 @@ export interface FileRoutesByFullPath {
   '/conditions': typeof ConditionsIndexRoute
   '/investigations': typeof InvestigationsIndexRoute
   '/managements': typeof ManagementsIndexRoute
-  '/todo': typeof TodoIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/search': typeof SearchRoute
+  '/todo': typeof TodoRoute
   '/settings': typeof SettingsLazyRoute
   '/calc/acute-respiratory-acidosis': typeof CalcAcuteRespiratoryAcidosisRoute
   '/calc/acute-respiratory-alkalosis': typeof CalcAcuteRespiratoryAlkalosisRoute
@@ -419,13 +420,13 @@ export interface FileRoutesByTo {
   '/conditions': typeof ConditionsIndexRoute
   '/investigations': typeof InvestigationsIndexRoute
   '/managements': typeof ManagementsIndexRoute
-  '/todo': typeof TodoIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/search': typeof SearchRoute
+  '/todo': typeof TodoRoute
   '/settings': typeof SettingsLazyRoute
   '/calc/acute-respiratory-acidosis': typeof CalcAcuteRespiratoryAcidosisRoute
   '/calc/acute-respiratory-alkalosis': typeof CalcAcuteRespiratoryAlkalosisRoute
@@ -447,7 +448,6 @@ export interface FileRoutesById {
   '/conditions/': typeof ConditionsIndexRoute
   '/investigations/': typeof InvestigationsIndexRoute
   '/managements/': typeof ManagementsIndexRoute
-  '/todo/': typeof TodoIndexRoute
 }
 
 export interface FileRouteTypes {
@@ -455,6 +455,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/search'
+    | '/todo'
     | '/settings'
     | '/calc/acute-respiratory-acidosis'
     | '/calc/acute-respiratory-alkalosis'
@@ -476,11 +477,11 @@ export interface FileRouteTypes {
     | '/conditions'
     | '/investigations'
     | '/managements'
-    | '/todo'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/search'
+    | '/todo'
     | '/settings'
     | '/calc/acute-respiratory-acidosis'
     | '/calc/acute-respiratory-alkalosis'
@@ -502,11 +503,11 @@ export interface FileRouteTypes {
     | '/conditions'
     | '/investigations'
     | '/managements'
-    | '/todo'
   id:
     | '__root__'
     | '/'
     | '/search'
+    | '/todo'
     | '/settings'
     | '/calc/acute-respiratory-acidosis'
     | '/calc/acute-respiratory-alkalosis'
@@ -528,13 +529,13 @@ export interface FileRouteTypes {
     | '/conditions/'
     | '/investigations/'
     | '/managements/'
-    | '/todo/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SearchRoute: typeof SearchRoute
+  TodoRoute: typeof TodoRoute
   SettingsLazyRoute: typeof SettingsLazyRoute
   CalcAcuteRespiratoryAcidosisRoute: typeof CalcAcuteRespiratoryAcidosisRoute
   CalcAcuteRespiratoryAlkalosisRoute: typeof CalcAcuteRespiratoryAlkalosisRoute
@@ -556,12 +557,12 @@ export interface RootRouteChildren {
   ConditionsIndexRoute: typeof ConditionsIndexRoute
   InvestigationsIndexRoute: typeof InvestigationsIndexRoute
   ManagementsIndexRoute: typeof ManagementsIndexRoute
-  TodoIndexRoute: typeof TodoIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SearchRoute: SearchRoute,
+  TodoRoute: TodoRoute,
   SettingsLazyRoute: SettingsLazyRoute,
   CalcAcuteRespiratoryAcidosisRoute: CalcAcuteRespiratoryAcidosisRoute,
   CalcAcuteRespiratoryAlkalosisRoute: CalcAcuteRespiratoryAlkalosisRoute,
@@ -583,7 +584,6 @@ const rootRouteChildren: RootRouteChildren = {
   ConditionsIndexRoute: ConditionsIndexRoute,
   InvestigationsIndexRoute: InvestigationsIndexRoute,
   ManagementsIndexRoute: ManagementsIndexRoute,
-  TodoIndexRoute: TodoIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -598,6 +598,7 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/search",
+        "/todo",
         "/settings",
         "/calc/acute-respiratory-acidosis",
         "/calc/acute-respiratory-alkalosis",
@@ -618,8 +619,7 @@ export const routeTree = rootRoute
         "/calc/",
         "/conditions/",
         "/investigations/",
-        "/managements/",
-        "/todo/"
+        "/managements/"
       ]
     },
     "/": {
@@ -627,6 +627,9 @@ export const routeTree = rootRoute
     },
     "/search": {
       "filePath": "search.tsx"
+    },
+    "/todo": {
+      "filePath": "todo.tsx"
     },
     "/settings": {
       "filePath": "settings.lazy.tsx"
@@ -690,9 +693,6 @@ export const routeTree = rootRoute
     },
     "/managements/": {
       "filePath": "managements/index.tsx"
-    },
-    "/todo/": {
-      "filePath": "todo/index.tsx"
     }
   }
 }
