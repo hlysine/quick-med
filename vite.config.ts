@@ -5,6 +5,9 @@ import { VitePWA } from 'vite-plugin-pwa';
 import tailwindcss from '@tailwindcss/vite';
 import { markdownIndex } from './scripts/markdownIndexPlugin';
 import { resolve } from 'path';
+import { execSync } from 'child_process';
+
+const commitHash = execSync('git rev-parse HEAD').toString().trim();
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -136,4 +139,7 @@ export default defineConfig({
       },
     }),
   ],
+  define: {
+    'import.meta.env.VITE_PACKAGE_VERSION': JSON.stringify(commitHash),
+  },
 });
