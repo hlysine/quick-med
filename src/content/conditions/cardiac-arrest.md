@@ -34,16 +34,19 @@ xx:xx。希望你地可以節哀順變」. Most relatives appreciate that (you a
   1. Activate arrest call
   2. Start continuous chest compressions +/- defibrillations (circulation first! C -> A -> B)
   3. **Don full PPE before starting ventilations** (no need if already intubated)
-* **Arrest bloods:** CBC d/c, clotting, L/RFT, Ca/PO4, ABG, lactate, NH3, RG, TnI/CK
-  * +/- T&S, blood c/st if indicated
+* **Arrest bloods:** `CBC d/c`, `clotting`, `L/RFT`, `Ca/PO4`, `ABG`, `lactate`, `NH3`, `RG`, `TnI/CK`
+  * +/- `T&S`, `blood c/st` if indicated
 * [**ACLS adult cardiac arrest algorithm**](../managements/acls-cardiac-arrest)
 * [**Epinephrine**](../managements/epinephrine)
 
 > **Tips for taking arrest blood:**
 > * Take from **femoral artery** (at the mid-inguinal point) using 20ml (or 10ml) syringe
 > * If cannot feel pulse: blind puncture by landmark and perform sunray motion while aspirating
-> * Memorise the bottle colours so you can take the blood first then go back to issue the tests:
-    > 1 blue (Na citrate), 3-4 green (Li heparin), 2 purple (K EDTA), 2 grey (Na fluoride) bottles
+> * Memorise the bottle colours so you can take the blood first then go back to issue the tests:<br>
+    > `1 blue (Na citrate)`<br>
+    > `3-4 green (Li heparin)`<br>
+    > `2 purple (K EDTA)`<br>
+    > `2 grey (Na fluoride)`
 > * Save the arrest blood template in your CMS account!
 
 ## Post-ROSC (return of spontaneous circulation) management
