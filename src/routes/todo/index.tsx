@@ -1,5 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { FaPlus } from 'react-icons/fa';
 import { cn } from '../../utils/uiUtils';
 
@@ -95,14 +102,16 @@ function TodoRow({
   const keepFocus = () => {
     stayRef.current = true;
   };
-
   const refocus = () => {
     inputRef.current?.focus();
   };
 
   if (expanded) {
     return (
-      <li className="flex flex-col gap-2 px-3 py-2.5 bg-base-200">
+      <li
+        data-id={todo.id}
+        className="flex flex-col gap-2 px-3 py-2.5 bg-base-200"
+      >
         <div className="flex items-center gap-2">
           <input
             type="checkbox"
@@ -167,6 +176,7 @@ function TodoRow({
 
   return (
     <li
+      data-id={todo.id}
       className="flex items-center gap-2 px-3 py-3 hover:bg-base-200 active:bg-base-300 transition-colors"
       onClick={onExpand}
     >
@@ -224,6 +234,9 @@ function TodoPage() {
   const [showClearModal, setShowClearModal] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const clearModalRef = useRef<HTMLDialogElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+  // Snapshot of each item's top position from the previous render
+  const prevPositions = useRef<Map<string, number>>(new Map());
 
   useEffect(() => {
     saveTodos(todos);
@@ -282,6 +295,39 @@ function TodoPage() {
     [todos, sort]
   );
 
+  // FLIP: after each render, animate items from their old positions to their new ones
+  useLayoutEffect(() => {
+    const list = listRef.current;
+    if (!list) return;
+
+    const items = list.querySelectorAll<HTMLElement>('[data-id]');
+    const newPositions = new Map<string, number>();
+    items.forEach(el =>
+      newPositions.set(el.dataset.id!, el.getBoundingClientRect().top)
+    );
+
+    items.forEach(el => {
+      const id = el.dataset.id!;
+      const prev = prevPositions.current.get(id);
+      const next = newPositions.get(id)!;
+      if (prev === undefined || Math.abs(prev - next) < 1) return;
+
+      const delta = prev - next;
+      el.style.transition = 'none';
+      el.style.transform = `translateY(${delta}px)`;
+      el.getBoundingClientRect(); // force reflow
+      el.style.transition = 'transform 100ms ease-out';
+      el.style.transform = '';
+      const onEnd = () => {
+        el.style.transition = '';
+        el.removeEventListener('transitionend', onEnd);
+      };
+      el.addEventListener('transitionend', onEnd);
+    });
+
+    prevPositions.current = newPositions;
+  }, [sorted]);
+
   return (
     <div className="flex-1 flex flex-col overflow-hidden">
       {/* Controls row */}
@@ -323,7 +369,7 @@ function TodoPage() {
             <span className="text-sm">No tasks</span>
           </div>
         ) : (
-          <ul className="divide-y divide-base-200">
+          <ul ref={listRef} className="divide-y divide-base-200">
             {sorted.map(todo => (
               <TodoRow
                 key={todo.id}
