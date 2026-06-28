@@ -4,6 +4,20 @@ import { cn } from '../utils/uiUtils';
 import { useMemo } from 'react';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 
+async function cleanReload() {
+  try {
+    const registrations = await navigator.serviceWorker.getRegistrations();
+    console.log(`Unregistering ${registrations.length} service workers`);
+    await Promise.all(
+      registrations.map(r => {
+        return r.unregister();
+      })
+    );
+  } finally {
+    window.location.href = new URL(window.location.href).origin;
+  }
+}
+
 function SettingsToggle({
   settingsKey,
   label,
@@ -82,6 +96,19 @@ function SuggestEdits() {
   );
 }
 
+function ForceUpdate() {
+  return (
+    <div className="w-full flex flex-col">
+      <button className="btn btn-error btn-outline" onClick={cleanReload}>
+        Force Update
+      </button>
+      <p className="text-sm text-error mt-2">
+        Make sure you have a stable internet connection before proceeding.
+      </p>
+    </div>
+  );
+}
+
 function Settings() {
   const isPWA = useMemo(() => {
     return ['fullscreen', 'standalone', 'minimal-ui'].some(
@@ -123,6 +150,7 @@ function Settings() {
         />
         <ClearBookmarks />
         <SuggestEdits />
+        <ForceUpdate />
       </div>
     </div>
   );
