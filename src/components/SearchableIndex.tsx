@@ -4,6 +4,7 @@ import { FaSearch } from 'react-icons/fa';
 import { WikiPage } from '../utils/types';
 import CollapsibleSections from './CollapsibleSections';
 import MouseDownLink from './MouseDownLink';
+import { useNavigate } from '@tanstack/react-router';
 
 export interface SearchableIndexProps {
   entries: WikiPage[];
@@ -17,6 +18,7 @@ export default memo(function SearchableIndex({
   showKeywords = false,
 }: SearchableIndexProps) {
   const [searchString, setSearchString] = useState('');
+  const navigate = useNavigate();
 
   const miniSearch = useMemo(() => {
     const ms = new MiniSearch<WikiPage>({
@@ -48,8 +50,8 @@ export default memo(function SearchableIndex({
   }, [allEntries, searchString, miniSearch]);
 
   return (
-    <div className="flex-1 flex flex-col items-center justify-center gap-2 w-full mt-2 max-w-[1000px] self-center">
-      <label className="input w-full max-w-[400px]">
+    <div className="flex-1 flex flex-col items-center justify-center gap-2 w-full mt-2 max-w-250 self-center">
+      <label className="input w-full max-w-100">
         <FaSearch />
         <input
           type="search"
@@ -57,6 +59,22 @@ export default memo(function SearchableIndex({
           placeholder="Search"
           value={searchString}
           onInput={e => setSearchString(e.currentTarget.value)}
+          onKeyDown={async e => {
+            if (e.key === 'Escape') {
+              e.preventDefault();
+              e.stopPropagation();
+              setSearchString('');
+            } else if (e.key === 'Enter') {
+              e.preventDefault();
+              e.stopPropagation();
+              const entry = Object.values(sections).flat()[0];
+              if (!entry) return;
+              e.currentTarget.blur();
+              await navigate({
+                to: routeBase + entry.key,
+              });
+            }
+          }}
         />
       </label>
       <CollapsibleSections sections={sections}>

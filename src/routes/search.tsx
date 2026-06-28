@@ -1,6 +1,14 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute, useNavigate } from '@tanstack/react-router';
 import { useVirtualizer } from '@tanstack/react-virtual';
-import { Suspense, use, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  Suspense,
+  use,
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { FaSearch } from 'react-icons/fa';
 import MouseDownLink from '../components/MouseDownLink';
 import debounce from 'lodash/debounce';
@@ -70,17 +78,33 @@ const searchPromise = new Promise(resolve => setTimeout(resolve, 0))
   .then(() => import('./-search'))
   .then(mod => mod.search);
 
-function Search({ query }: { query: string }) {
+function Search({
+  query,
+  ref,
+}: {
+  query: string;
+  ref?: React.Ref<{ navigate: () => Promise<void> }>;
+}) {
   const search = use(searchPromise);
+  const navigate = useNavigate();
   const results = useMemo(() => {
     return search(query);
   }, [query, search]);
+  useImperativeHandle(ref, () => ({
+    navigate: async () => {
+      if (results.length === 0) return;
+      await navigate({
+        to: results[0].link,
+      });
+    },
+  }));
 
   return <SearchResults results={results} />;
 }
 
 function SearchPage() {
   const [query, setQuery] = useState(savedQuery);
+  const navigateRef = useRef<{ navigate: () => Promise<void> }>(null);
 
   const debounceInput = useMemo(
     () =>
@@ -106,8 +130,21 @@ function SearchPage() {
           className="grow"
           placeholder="Search"
           value={query}
+          autoFocus
           onFocus={e => e.target.select()}
           onInput={e => debounceInput(e.currentTarget.value)}
+          onKeyDown={async e => {
+            if (e.key === 'Escape') {
+              e.preventDefault();
+              e.stopPropagation();
+              setQuery('');
+            } else if (e.key === 'Enter') {
+              e.preventDefault();
+              e.stopPropagation();
+              e.currentTarget.blur();
+              await navigateRef.current?.navigate();
+            }
+          }}
         />
       </label>
       <Suspense
@@ -117,7 +154,7 @@ function SearchPage() {
           </div>
         }
       >
-        <Search query={query} />
+        <Search query={query} ref={navigateRef} />
       </Suspense>
     </div>
   );
