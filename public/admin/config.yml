@@ -15,6 +15,7 @@ collections:
     folder: 'src/content/calc'
     preview_path: 'calc/{{slug}}'
     create: false
+    delete: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Section', name: 'section', widget: 'string' }
