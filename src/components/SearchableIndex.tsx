@@ -1,3 +1,4 @@
+import MiniSearch from 'minisearch';
 import { memo, useMemo, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { WikiPage } from '../utils/types';
@@ -17,17 +18,26 @@ export default memo(function SearchableIndex({
 }: SearchableIndexProps) {
   const [searchString, setSearchString] = useState('');
 
+  const miniSearch = useMemo(() => {
+    const ms = new MiniSearch<WikiPage>({
+      idField: 'key',
+      fields: ['title', 'section', 'keywords'],
+      storeFields: ['title', 'section', 'keywords', 'key'],
+      searchOptions: {
+        boost: { title: 2, section: 1.5, keywords: 1.2 },
+        fuzzy: 0.2,
+        prefix: true,
+      },
+    });
+    ms.addAll(allEntries);
+    return ms;
+  }, [allEntries]);
+
   const sections = useMemo(() => {
     const filteredEntries =
       !searchString || searchString.length === 0
         ? allEntries
-        : allEntries.filter(
-            entry =>
-              entry.title.toLowerCase().includes(searchString.toLowerCase()) ||
-              entry.keywords.some(keyword =>
-                keyword.toLowerCase().includes(searchString.toLowerCase())
-              )
-          );
+        : (miniSearch.search(searchString) as unknown as WikiPage[]);
     return filteredEntries.reduce<Record<string, WikiPage[]>>((acc, entry) => {
       if (!acc[entry.section]) {
         acc[entry.section] = [];
@@ -35,7 +45,7 @@ export default memo(function SearchableIndex({
       acc[entry.section].push(entry);
       return acc;
     }, {});
-  }, [allEntries, searchString]);
+  }, [allEntries, searchString, miniSearch]);
 
   return (
     <div className="flex-1 flex flex-col items-center justify-center gap-2 w-full mt-2 max-w-[1000px] self-center">
