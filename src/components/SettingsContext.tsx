@@ -3,6 +3,7 @@ import { z } from 'zod';
 
 export const SiteSettingsSchema = z.object({
   isDark: z.boolean().default(false).catch(false),
+  hiddenTabs: z.array(z.string()).default([]).catch([]),
   bookmarks: z
     .array(
       z.object({

@@ -1,5 +1,6 @@
 import { createLazyFileRoute } from '@tanstack/react-router';
 import { SiteSettings, useSettings } from '../components/SettingsContext';
+import { dockTabs } from './-tabs';
 import { cn } from '../utils/uiUtils';
 import { useMemo } from 'react';
 import { useRegisterSW } from 'virtual:pwa-register/react';
@@ -38,6 +39,37 @@ function SettingsToggle({
         onChange={e => setValue(e.target.checked)}
       />
     </label>
+  );
+}
+
+function DockTabToggles() {
+  const [hiddenTabs, setHiddenTabs] = useSettings('hiddenTabs');
+  return (
+    <div className="flex flex-col gap-2">
+      {dockTabs.map(tab => {
+        const visible = !hiddenTabs.includes(tab.to);
+        return (
+          <label
+            key={tab.to}
+            className="label inline-flex justify-between items-center"
+          >
+            <span className="text-base-content">{tab.name}</span>
+            <input
+              type="checkbox"
+              className="toggle"
+              checked={visible}
+              onChange={() =>
+                setHiddenTabs(
+                  visible
+                    ? [...hiddenTabs, tab.to]
+                    : hiddenTabs.filter(t => t !== tab.to)
+                )
+              }
+            />
+          </label>
+        );
+      })}
+    </div>
   );
 }
 
@@ -120,7 +152,7 @@ function Settings() {
     needRefresh: [needRefresh],
   } = useRegisterSW();
   return (
-    <div className="flex-1 flex p-4 flex-col gap-2 w-full mt-2 max-w-250 self-center">
+    <div className="flex-1 flex p-4 flex-col gap-2 w-full mt-2 max-w-250 self-center overflow-y-auto *:shrink-0">
       <h1 className="text-4xl font-bold">Quick Med</h1>
       <p className="text-xl">Acute medicine quick reference</p>
       <p className="text-sm">
@@ -148,6 +180,10 @@ function Settings() {
           settingsKey="isDark"
           label="Use Dark Mode"
         />
+        <div className="flex flex-col gap-2">
+          <h3 className="font-semibold">Dock tabs</h3>
+          <DockTabToggles />
+        </div>
         <ClearBookmarks />
         <SuggestEdits />
         <ForceUpdate />

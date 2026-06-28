@@ -9,9 +9,11 @@ import ThemeToggle from '../components/ThemeToggle';
 import { useEffect } from 'react';
 import MouseDownLink from '../components/MouseDownLink';
 import { dockTabs, tabs } from './-tabs';
+import { useSettings } from '../components/SettingsContext';
 
 function Dock() {
   const location = useRouterState({ select: state => state.location });
+  const [hiddenTabs] = useSettings('hiddenTabs');
 
   useEffect(() => {
     const tab = tabs.find(tab => location.pathname.startsWith(tab.to));
@@ -20,9 +22,15 @@ function Dock() {
     }
   }, [location]);
 
+  const visibleTabs = dockTabs.filter(tab => !hiddenTabs.includes(tab.to));
+
+  if (visibleTabs.length === 0) {
+    return null;
+  }
+
   return (
     <div className="dock static hide-on-type">
-      {dockTabs.map(tab => (
+      {visibleTabs.map(tab => (
         <MouseDownLink
           key={tab.name}
           to={tab.to}
