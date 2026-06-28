@@ -110,7 +110,7 @@ keywords:
     * Microbiological workup
         * Sputum x c/st (+/- AFB smear/PCR/c/st, cytology if suspicious e.g. haemoptysis)
         * NPS x resp viruses (e.g. flu, nCoV)
-        * Urine x pneumococcal and legionella antigen (for CAPD)
+        * Urine x pneumococcal and legionella antigen (for CAP)
     * Bedside spirometry for neurological causes (early ventilation if FVC <15ml/kg!)
     * Consider CT thorax with contrast (or CTPA) for respiratory failure with unknown cause
 

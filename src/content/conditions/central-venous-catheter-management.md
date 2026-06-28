@@ -16,7 +16,7 @@ keywords:
 ## Types of CVC you will see in ward
 * **Temporary HD catheters** (without subcutaneous tunnel) - enter jugular vein in *neck* or femoral vein
 * **Tunnelled catheters** (e.g. Hickmann) - subcutaneous tunnel in *chest* then join jugular/subclavian vein
-* **Peripherically-inserted central cannulas (PICCs)** - enter vein in *arm*, long lumen to reach central vein
+* **Peripherally-inserted central cannulas (PICCs)** - enter vein in *arm*, long lumen to reach central vein
 * **Port-a-cath** (not a catheter, but a central venous access device)
 
 ## Common indications

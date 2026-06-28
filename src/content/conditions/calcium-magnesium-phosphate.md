@@ -15,11 +15,11 @@ keywords:
 
 ## Hypercalcaemia
 
-| Severity | Normal | Mild | Moderate | Severe | Dangerous |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Plasma Ca2+** | **2.11 - 2.55** | 2.55 - 3.0 | 3.0 - 3.5 | > 3.5 | / |
-| **Symptoms** | / | No symptoms | / | - Thirst<br>- Polyuria and polydipsia<br>- Nausea and vomiting<br>- Constipation | - Impaired consciousness<br>- Comma<br>- Death |
-| **Notes** | / | Associated with primary hyperparathyroidism | / | / | Associated with malignancy |
+| Severity        | Normal          | Mild                                        | Moderate  | Severe                                                                           | Dangerous                                      |
+|:----------------|:----------------|:--------------------------------------------|:----------|:---------------------------------------------------------------------------------|:-----------------------------------------------|
+| **Plasma Ca2+** | **2.10 - 2.55** | 2.55 - 3.0                                  | 3.0 - 3.5 | > 3.5                                                                            | /                                              |
+| **Symptoms**    | /               | No symptoms                                 | /         | - Thirst<br>- Polyuria and polydipsia<br>- Nausea and vomiting<br>- Constipation | - Impaired consciousness<br>- Comma<br>- Death |
+| **Notes**       | /               | Associated with primary hyperparathyroidism | /         | /                                                                                | Associated with malignancy                     |
 
 * Normal range: **2.10-2.55**
 * Adjusted [Ca] = measured [Ca] + 0.02 x (40-[albumin]) -> *but is unreliable; best order ionised Ca*

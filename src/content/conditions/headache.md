@@ -40,7 +40,7 @@ keywords:
     * IV vancomycin (Pneumococcus, MRSA)
     * IV acyclovir 10mg/kg Q8H (VZV, HSV)
     * IV ampicillin 2g Q4H if immunocompromised/age>55/alcoholic (Listeria)
-    * +/- IV Flagyl if Hx of mastaoditis/sinusitis/otitis/abscess (anaerobes)
+    * +/- IV Flagyl if Hx of mastoiditis/sinusitis/otitis/abscess (anaerobes)
 * If suspect **SAH: urgent CT angiogram, aim SBP < 140, reverse anticoagulation, Transamin**, nimodipine 60mg PO Q4H, **urgent consult NS**
 * If **new or enlarged haematoma/ICH:** aim SBP < 140, Plt > 100, INR < 1.5, +/- urgent consult NS
 * If **artery dissection: activate stroke call (if stroke), urgent consult NS**, + urgent CT angiogram

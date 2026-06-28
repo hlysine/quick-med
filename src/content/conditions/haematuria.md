@@ -54,7 +54,7 @@ keywords:
 * **PVRU x1**
 * **If PVRU >350ml or blood clots +:**
     * **3-way haematuria catheter (i.e. 3-way 24Fr foley) to BSB**
-    * Blocked washout +/- bladder irrigation full rate (after washout)
+    * Bladder washout +/- bladder irrigation full rate (after washout)
 * **W/H antiplatelets** (consult if DAPT for ACS), **W/H +/- reverse anticoagulation**
 * Consult URO (may need FC + CTU/USG for workup if no known cause)
 

@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdfinfo \"C:\\\\Users\\\\henry\\\\Downloads\\\\Intern BB Guide.pdf\")",
+      "Bash(pdftotext --version)",
+      "Bash(pdftotext -layout \"C:\\\\Users\\\\henry\\\\Downloads\\\\Intern BB Guide.pdf\" /tmp/intern_bb_guide.txt)",
+      "Bash(pdftotext -layout \"C:/Users/henry/Downloads/Intern BB Guide.pdf\" /tmp/intern_bb_guide.txt)",
+      "Read(//tmp/**)",
+      "Bash(grep -n \"^[A-Z][a-z A-Z/\\(\\)'\\\\-]*$\\\\|^[A-Z][a-z A-Z/\\(\\)'\\\\-]*\\\\s*$\" /tmp/intern_bb_guide.txt)",
+      "Bash(grep -v \"^\\\\s*$\")",
+      "Read(//c/tmp/**)",
+      "Read(//c/Users/henry/Desktop/**)",
+      "Bash(python3 -c \"data = open\\('/tmp/intern_bb_guide.txt', 'rb'\\).read\\(\\); idx = data.find\\(b'switch to'\\); ctx = data[idx-50:idx+100]; print\\(repr\\(ctx\\)\\)\")",
+      "Bash(python3 -c \"data = open\\('C:/Users/henry/AppData/Local/Temp/intern_bb_guide.txt', 'rb'\\).read\\(\\); idx = data.find\\(b'switch to'\\); print\\(repr\\(data[idx:idx+100]\\)\\)\")",
+      "Bash(python3 -c \"import subprocess; r = subprocess.run\\(['cat', '/tmp/intern_bb_guide.txt'], capture_output=True\\); data = r.stdout; idx = data.find\\(b'switch to'\\); print\\(repr\\(data[idx:idx+100]\\)\\)\")",
+      "Bash(python3 -c \"import subprocess; r = subprocess.run\\(['cat', '/tmp/intern_bb_guide.txt'], capture_output=True\\); data = r.stdout; idx = data.find\\(b'switch to \\\\xbd'\\); print\\(repr\\(data[idx:idx+60]\\)\\) if idx >= 0 else print\\('not found'\\); idx2 = data.find\\(b'switch to'\\); occurrences = []; pos = 0; [occurrences.append\\(i\\) for i in range\\(len\\(data\\)\\) if data[i:i+9] == b'switch to']; print\\('occurrences:', len\\(occurrences\\)\\)\")"
+    ]
+  }
+}
