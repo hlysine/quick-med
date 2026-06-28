@@ -15,6 +15,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Route as rootRoute } from './routes/__root'
 import { Route as SearchImport } from './routes/search'
 import { Route as IndexImport } from './routes/index'
+import { Route as TodoIndexImport } from './routes/todo/index'
 import { Route as ManagementsIndexImport } from './routes/managements/index'
 import { Route as InvestigationsIndexImport } from './routes/investigations/index'
 import { Route as ConditionsIndexImport } from './routes/conditions/index'
@@ -57,6 +58,12 @@ const SearchRoute = SearchImport.update({
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TodoIndexRoute = TodoIndexImport.update({
+  id: '/todo/',
+  path: '/todo/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -349,6 +356,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagementsIndexImport
       parentRoute: typeof rootRoute
     }
+    '/todo/': {
+      id: '/todo/'
+      path: '/todo'
+      fullPath: '/todo'
+      preLoaderRoute: typeof TodoIndexImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -378,6 +392,7 @@ export interface FileRoutesByFullPath {
   '/conditions': typeof ConditionsIndexRoute
   '/investigations': typeof InvestigationsIndexRoute
   '/managements': typeof ManagementsIndexRoute
+  '/todo': typeof TodoIndexRoute
 }
 
 export interface FileRoutesByTo {
@@ -404,6 +419,7 @@ export interface FileRoutesByTo {
   '/conditions': typeof ConditionsIndexRoute
   '/investigations': typeof InvestigationsIndexRoute
   '/managements': typeof ManagementsIndexRoute
+  '/todo': typeof TodoIndexRoute
 }
 
 export interface FileRoutesById {
@@ -431,6 +447,7 @@ export interface FileRoutesById {
   '/conditions/': typeof ConditionsIndexRoute
   '/investigations/': typeof InvestigationsIndexRoute
   '/managements/': typeof ManagementsIndexRoute
+  '/todo/': typeof TodoIndexRoute
 }
 
 export interface FileRouteTypes {
@@ -459,6 +476,7 @@ export interface FileRouteTypes {
     | '/conditions'
     | '/investigations'
     | '/managements'
+    | '/todo'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -484,6 +502,7 @@ export interface FileRouteTypes {
     | '/conditions'
     | '/investigations'
     | '/managements'
+    | '/todo'
   id:
     | '__root__'
     | '/'
@@ -509,6 +528,7 @@ export interface FileRouteTypes {
     | '/conditions/'
     | '/investigations/'
     | '/managements/'
+    | '/todo/'
   fileRoutesById: FileRoutesById
 }
 
@@ -536,6 +556,7 @@ export interface RootRouteChildren {
   ConditionsIndexRoute: typeof ConditionsIndexRoute
   InvestigationsIndexRoute: typeof InvestigationsIndexRoute
   ManagementsIndexRoute: typeof ManagementsIndexRoute
+  TodoIndexRoute: typeof TodoIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -562,6 +583,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConditionsIndexRoute: ConditionsIndexRoute,
   InvestigationsIndexRoute: InvestigationsIndexRoute,
   ManagementsIndexRoute: ManagementsIndexRoute,
+  TodoIndexRoute: TodoIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -596,7 +618,8 @@ export const routeTree = rootRoute
         "/calc/",
         "/conditions/",
         "/investigations/",
-        "/managements/"
+        "/managements/",
+        "/todo/"
       ]
     },
     "/": {
@@ -667,6 +690,9 @@ export const routeTree = rootRoute
     },
     "/managements/": {
       "filePath": "managements/index.tsx"
+    },
+    "/todo/": {
+      "filePath": "todo/index.tsx"
     }
   }
 }

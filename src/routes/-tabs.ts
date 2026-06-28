@@ -7,6 +7,7 @@ import {
   FaHeartbeat,
   FaFlask,
   FaTired,
+  FaTasks,
 } from 'react-icons/fa';
 import { IconType } from 'react-icons/lib';
 
@@ -17,6 +18,7 @@ export enum TabKeys {
   Managements = '/managements',
   Search = '/search',
   Settings = '/settings',
+  Todo = '/todo',
 }
 
 export interface Tab {
@@ -55,6 +57,12 @@ export const tabs: Tab[] = [
     name: 'Search',
     icon: FaSearch,
     to: TabKeys.Search,
+    dock: true,
+  },
+  {
+    name: 'Tasks',
+    icon: FaTasks,
+    to: TabKeys.Todo,
     dock: true,
   },
   {
