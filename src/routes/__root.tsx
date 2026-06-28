@@ -39,7 +39,6 @@ function Dock() {
 export const Route = createRootRoute({
   component: () => (
     <div className="w-full h-full flex flex-col">
-      <PWAPrompt />
       <nav className="navbar py-0 bg-base-300 shadow-sm justify-between hide-on-type">
         <div className="breadcrumbs text-sm ms-2">
           <ul>
@@ -54,7 +53,10 @@ export const Route = createRootRoute({
             </li>
           </ul>
         </div>
-        <ThemeToggle />
+        <div className="flex gap-1 items-center">
+          <PWAPrompt />
+          <ThemeToggle />
+        </div>
       </nav>
       <Outlet />
       <Dock />
