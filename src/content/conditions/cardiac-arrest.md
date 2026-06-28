@@ -37,6 +37,7 @@ xx:xx。希望你地可以節哀順變」. Most relatives appreciate that (you a
 * **Arrest bloods:** CBC d/c, clotting, L/RFT, Ca/PO4, ABG, lactate, NH3, RG, TnI/CK
   * +/- T&S, blood c/st if indicated
 * [**ACLS adult cardiac arrest algorithm**](../managements/acls-cardiac-arrest)
+* [**Epinephrine**](../managements/epinephrine)
 
 > **Tips for taking arrest blood:**
 > * Take from **femoral artery** (at the mid-inguinal point) using 20ml (or 10ml) syringe

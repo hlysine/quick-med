@@ -158,6 +158,15 @@
     "key": "bls-termination"
   },
   {
+    "title": "Epinephrine",
+    "section": "Resuscitation",
+    "keywords": [
+      "adrenaline",
+      "vasopressors"
+    ],
+    "key": "epinephrine"
+  },
+  {
     "title": "Neonatal resuscitation",
     "section": "Resuscitation",
     "keywords": [

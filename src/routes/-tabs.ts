@@ -4,9 +4,9 @@ import {
   FaSyringe,
   FaSearch,
   FaCog,
-  FaBolt,
   FaHeartbeat,
   FaFlask,
+  FaTired,
 } from 'react-icons/fa';
 import { IconType } from 'react-icons/lib';
 
@@ -75,13 +75,13 @@ export const pinnedTabs: Tab[] = [
   {
     name: 'Cardiac Arrest',
     icon: FaHeartbeat,
-    to: '/conditions/in-hospital-cardiocerebral-resuscitation',
+    to: '/conditions/cardiac-arrest',
     dock: false,
   },
   {
-    name: 'Cardioversion / defibrillation',
-    icon: FaBolt,
-    to: '/managements/cardioversion-defibrillation',
+    name: 'Desaturation',
+    icon: FaTired,
+    to: '/conditions/desaturation',
     dock: false,
   },
 ];
