@@ -231,6 +231,7 @@ function TodoPage() {
   const [text, setText] = useState('');
   const [sort, setSort] = useState<SortMode>('entry');
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const collapseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [showClearModal, setShowClearModal] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const clearModalRef = useRef<HTMLDialogElement>(null);
@@ -375,8 +376,19 @@ function TodoPage() {
                 key={todo.id}
                 todo={todo}
                 expanded={expandedId === todo.id}
-                onExpand={() => setExpandedId(todo.id)}
-                onCollapse={() => setExpandedId(null)}
+                onExpand={() => {
+                  if (collapseTimerRef.current) {
+                    clearTimeout(collapseTimerRef.current);
+                    collapseTimerRef.current = null;
+                  }
+                  setExpandedId(todo.id);
+                }}
+                onCollapse={() => {
+                  collapseTimerRef.current = setTimeout(
+                    () => setExpandedId(null),
+                    0
+                  );
+                }}
                 onToggleDone={() => updateTodo(todo.id, 'done', !todo.done)}
                 onUpdateText={val => updateTodo(todo.id, 'text', val)}
                 onUpdateUrgency={u => updateTodo(todo.id, 'urgency', u)}
