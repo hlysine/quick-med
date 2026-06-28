@@ -19,6 +19,7 @@
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+  image-rendering: auto;
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,5 +38,4 @@
 * {
   min-width: 0;
   min-height: 0;
-  image-rendering: crisp-edges;
 }
