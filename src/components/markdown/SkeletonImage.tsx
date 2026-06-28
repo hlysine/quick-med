@@ -23,7 +23,7 @@ export default function SkeletonImage({
     <>
       <span
         className={cn(
-          'skeleton block w-full max-w-100 h-64',
+          'skeleton block w-full max-w-full h-72',
           className,
           isLoading || 'hidden'
         )}

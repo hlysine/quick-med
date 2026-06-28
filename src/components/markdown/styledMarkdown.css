@@ -45,7 +45,7 @@
 }
 
 .markdown img {
-  @apply max-w-[min(400px,100%)] w-fit h-auto rounded-md border border-base-content/20 shadow-sm my-2;
+  @apply max-w-full w-fit h-auto rounded-md border border-base-content/20 shadow-sm my-2;
 }
 
 .markdown a {
