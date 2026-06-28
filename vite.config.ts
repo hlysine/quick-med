@@ -7,7 +7,9 @@ import { markdownIndex } from './scripts/markdownIndexPlugin';
 import { resolve } from 'path';
 import { execSync } from 'child_process';
 
-const commitHash = execSync('git rev-parse HEAD').toString().trim();
+const commitHash =
+  process.env.RAILWAY_GIT_COMMIT_SHA ??
+  execSync('git rev-parse HEAD').toString().trim();
 
 // https://vitejs.dev/config/
 export default defineConfig({
