@@ -10,8 +10,6 @@ keywords:
   - ROSC
 ---
 
-**PROCESSED BY AI, UNVETTED**
-
 # Cardiac Arrest
 
 > **No pulse, no breathing**
@@ -38,6 +36,7 @@ xx:xx。希望你地可以節哀順變」. Most relatives appreciate that (you a
   3. **Don full PPE before starting ventilations** (no need if already intubated)
 * **Arrest bloods:** CBC d/c, clotting, L/RFT, Ca/PO4, ABG, lactate, NH3, RG, TnI/CK
   * +/- T&S, blood c/st if indicated
+* [**ACLS adult cardiac arrest algorithm**](../managements/acls-cardiac-arrest)
 
 > **Tips for taking arrest blood:**
 > * Take from **femoral artery** (at the mid-inguinal point) using 20ml (or 10ml) syringe
@@ -45,8 +44,6 @@ xx:xx。希望你地可以節哀順變」. Most relatives appreciate that (you a
 > * Memorise the bottle colours so you can take the blood first then go back to issue the tests:
     > 1 blue (Na citrate), 3-4 green (Li heparin), 2 purple (K EDTA), 2 grey (Na fluoride) bottles
 > * Save the arrest blood template in your CMS account!
-
-
 
 ## Post-ROSC (return of spontaneous circulation) management
 

@@ -193,18 +193,6 @@
     "key": "cardiac-arrest"
   },
   {
-    "title": "Certification of Death",
-    "section": "Vitals",
-    "keywords": [
-      "death",
-      "certification",
-      "pacemaker",
-      "ICD",
-      "DNACPR"
-    ],
-    "key": "certification-of-death"
-  },
-  {
     "title": "Decreased GCS",
     "section": "Vitals",
     "keywords": [

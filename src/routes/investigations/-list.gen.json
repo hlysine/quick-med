@@ -1,13 +1,5 @@
 [
   {
-    "title": "Certifying death",
-    "section": "Basics",
-    "keywords": [
-      "death certification"
-    ],
-    "key": "certifying-death"
-  },
-  {
     "title": "Blood taking",
     "section": "Bloods",
     "keywords": [
@@ -27,5 +19,17 @@
       "Reciprocal changes"
     ],
     "key": "stemi"
+  },
+  {
+    "title": "Certification of Death",
+    "section": "Misc",
+    "keywords": [
+      "death",
+      "certification",
+      "pacemaker",
+      "ICD",
+      "DNACPR"
+    ],
+    "key": "certification-of-death"
   }
 ]
