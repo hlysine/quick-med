@@ -33,7 +33,7 @@ keywords:
 * Sputum x c/st if any
 * **Cough:**
     * Productive: mucolytic (Fluimucil, Bisolvon), expectorant (MES, guaifenesin)
-    * Dry: cough suppressant (Pholcodine, codeine, dextromethorphan)
+    * Dry: cough suppressant (Pholcodine, codeine, dextromethorphan *Phensedyl*)
 * Sore throat: throat lozenge (Dequadin), Panadol
 * Rhinorrhoea / nasal congestion: decongestant (phenylephrine, pseudoephedrine)
 * Allergy: antihistamine (Piriton, Cetirizine, diphenhydramine, promethazine), steroid nasal spray
