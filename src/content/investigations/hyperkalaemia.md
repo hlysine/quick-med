@@ -17,6 +17,8 @@ keywords:
 
 ## ECG Changes of Hyperkalaemia
 
+![Hyperkalaemia ECG](/assets/hyperkalaemia-ecg.png)
+
 | Serum Potassium | Typical ECG Appearance | Possible ECG Abnormalities |
 | :--- | :--- | :--- |
 | **Mild** (5.5-6.5 mEq/L) | Tall peaked T waves | Peaked T waves, Prolonged PR segment |
@@ -32,6 +34,9 @@ keywords:
     * P wave disappear
     * Sine wave pattern
     * Asystole
+* **Peaked and symmetrical T wave**, no atrial activity
+    * ECG not suitable for diagnosis
+    * ECG signs not obvious until very high K
 
 > **If haemolysed,** can order urgent recheck; but if >6.5, **give Ca glu first!**
 > (*remember Ca gluconate does NOT lower K, just stabilises myocardium*)

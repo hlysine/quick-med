@@ -18,10 +18,17 @@ keywords:
 > **Normal range: 3.5-5.0 mmol/L**
 
 ## ECG Features
+
+![Hypokalaemia ECG](/assets/hypokalaemia-ecg.png)
+
 * Prolonged PR interval
 * Flattened T wave
 * Prominent U wave
 * +/- Tachyarrhythmia
+* ST depression
+* T wave inversion
+* **Prominent U waves** - U wave taller than T wave
+* Long QU interval
 
 > **Correct K quickly!** If ACS/arrhythmia: **keep K > 4.0**
 
