@@ -87,9 +87,19 @@ function Search({
 }) {
   const search = use(searchPromise);
   const navigate = useNavigate();
+
+  const debounceSearch = useMemo(
+    () =>
+      debounce((value: string) => search(value), 10, {
+        leading: true,
+        trailing: true,
+      }),
+    [search]
+  );
+
   const results = useMemo(() => {
-    return search(query);
-  }, [query, search]);
+    return debounceSearch(query);
+  }, [query, debounceSearch]);
   useImperativeHandle(ref, () => ({
     navigate: async () => {
       if (results.length === 0) return;
@@ -105,18 +115,6 @@ function Search({
 function SearchPage() {
   const [query, setQuery] = useState(savedQuery);
   const navigateRef = useRef<{ navigate: () => Promise<void> }>(null);
-
-  const debounceInput = useMemo(
-    () =>
-      debounce(
-        (value: string) => {
-          setQuery(value);
-        },
-        10,
-        { leading: false, trailing: true }
-      ),
-    []
-  );
   useEffect(() => {
     savedQuery = query;
   }, [query]);
@@ -131,8 +129,8 @@ function SearchPage() {
           placeholder="Search"
           value={query}
           autoFocus
-          onFocus={e => e.target.select()}
-          onInput={e => debounceInput(e.currentTarget.value)}
+          onFocus={e => e.currentTarget.select()}
+          onInput={e => setQuery(e.currentTarget.value)}
           onKeyDown={async e => {
             if (e.key === 'Escape') {
               e.preventDefault();

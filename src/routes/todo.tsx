@@ -232,7 +232,7 @@ function TodoRow({
 
 function TodoPage() {
   const [todos, setTodos] = useState<TodoItem[]>(loadTodos);
-  const [text, setText] = useState('');
+  const [text, setText] = useState(localStorage.getItem('todo-text') ?? '');
   const [sort, setSort] = useState<SortMode>('entry');
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const collapseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -246,6 +246,10 @@ function TodoPage() {
   useEffect(() => {
     saveTodos(todos);
   }, [todos]);
+
+  useEffect(() => {
+    localStorage.setItem('todo-text', text);
+  }, [text]);
 
   useEffect(() => {
     if (showClearModal) clearModalRef.current?.showModal();
@@ -411,7 +415,8 @@ function TodoPage() {
           className="input input-bordered w-full"
           placeholder="New task..."
           value={text}
-          onChange={e => setText(e.target.value)}
+          onInput={e => setText(e.currentTarget.value)}
+          onFocus={e => e.currentTarget.select()}
           onKeyDown={e => {
             if (e.key === 'Enter' && text.trim()) addTodo('mid');
           }}
