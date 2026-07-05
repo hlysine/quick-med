@@ -7,6 +7,8 @@ keywords:
   - KCl
   - low potassium
   - cardiac arrhythmia
+patterns:
+  - \bk *[\d.]+
 ---
 
 **PROCESSED BY AI, UNVETTED**

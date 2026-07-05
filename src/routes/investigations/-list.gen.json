@@ -5,6 +5,7 @@
     "keywords": [
       "venepuncture"
     ],
+    "patterns": [],
     "key": "blood-taking"
   },
   {
@@ -15,6 +16,7 @@
       "PR depression",
       "diffuse ST elevation"
     ],
+    "patterns": [],
     "key": "acute-pericarditis"
   },
   {
@@ -25,6 +27,7 @@
       "AF",
       "irregularly irregular"
     ],
+    "patterns": [],
     "key": "atrial-fibrillation"
   },
   {
@@ -35,6 +38,7 @@
       "AFL",
       "sawtooth"
     ],
+    "patterns": [],
     "key": "atrial-flutter"
   },
   {
@@ -45,6 +49,7 @@
       "atrial premature complex",
       "ectopic beat"
     ],
+    "patterns": [],
     "key": "atrial-premature-complex"
   },
   {
@@ -57,6 +62,7 @@
       "complete heart block",
       "pacemaker"
     ],
+    "patterns": [],
     "key": "av-block"
   },
   {
@@ -70,6 +76,7 @@
       "LAFB",
       "LPFB"
     ],
+    "patterns": [],
     "key": "bundle-branch-block"
   },
   {
@@ -81,6 +88,7 @@
       "QRS axis",
       "interpretation"
     ],
+    "patterns": [],
     "key": "ecg-basic-features"
   },
   {
@@ -91,6 +99,7 @@
       "ICH",
       "subarachnoid haemorrhage"
     ],
+    "patterns": [],
     "key": "intracranial-haemorrhage"
   },
   {
@@ -101,6 +110,7 @@
       "left ventricular hypertrophy",
       "strain pattern"
     ],
+    "patterns": [],
     "key": "left-ventricular-hypertrophy"
   },
   {
@@ -111,6 +121,7 @@
       "MAT",
       "COPD"
     ],
+    "patterns": [],
     "key": "multifocal-atrial-tachycardia"
   },
   {
@@ -122,6 +133,7 @@
       "NSTEMI",
       "non-ST elevation myocardial infarction"
     ],
+    "patterns": [],
     "key": "nste-acs"
   },
   {
@@ -133,6 +145,7 @@
       "S1Q3T3",
       "right ventricular strain"
     ],
+    "patterns": [],
     "key": "pulmonary-embolism"
   },
   {
@@ -143,6 +156,7 @@
       "ICP",
       "giant T wave"
     ],
+    "patterns": [],
     "key": "raised-intracranial-pressure"
   },
   {
@@ -153,6 +167,7 @@
       "right ventricular hypertrophy",
       "right axis deviation"
     ],
+    "patterns": [],
     "key": "right-ventricular-hypertrophy"
   },
   {
@@ -164,6 +179,7 @@
       "sinus pause",
       "sinus arrhythmia"
     ],
+    "patterns": [],
     "key": "sa-block"
   },
   {
@@ -177,6 +193,7 @@
       "Hyperacute T waves",
       "Reciprocal changes"
     ],
+    "patterns": [],
     "key": "stemi"
   },
   {
@@ -191,6 +208,7 @@
       "WPW",
       "delta wave"
     ],
+    "patterns": [],
     "key": "supraventricular-tachycardia"
   },
   {
@@ -202,6 +220,7 @@
       "prolonged QRS",
       "bicarbonate"
     ],
+    "patterns": [],
     "key": "tricyclic-antidepressant-toxicity"
   },
   {
@@ -212,6 +231,7 @@
       "ventricular fibrillation",
       "cardiac arrest"
     ],
+    "patterns": [],
     "key": "ventricular-fibrillation"
   },
   {
@@ -223,6 +243,7 @@
       "ventricular ectopic",
       "fusion complex"
     ],
+    "patterns": [],
     "key": "ventricular-premature-complex"
   },
   {
@@ -236,6 +257,7 @@
       "Brugada sign",
       "Josephson sign"
     ],
+    "patterns": [],
     "key": "ventricular-tachycardia"
   },
   {
@@ -248,6 +270,7 @@
       "cholestasis",
       "jaundice"
     ],
+    "patterns": [],
     "key": "acute-deranged-liver-function"
   },
   {
@@ -260,6 +283,7 @@
       "oliguria",
       "renal failure"
     ],
+    "patterns": [],
     "key": "aki"
   },
   {
@@ -272,6 +296,7 @@
       "Hb drop",
       "blood transfusion"
     ],
+    "patterns": [],
     "key": "anaemia-hb-drop"
   },
   {
@@ -283,6 +308,9 @@
       "acidosis",
       "alkalosis",
       "respiratory failure"
+    ],
+    "patterns": [
+      "abg"
     ],
     "key": "blood-gas-abnormalities"
   },
@@ -296,6 +324,7 @@
       "phosphate",
       "calcium"
     ],
+    "patterns": [],
     "key": "calcium-magnesium-phosphate"
   },
   {
@@ -308,6 +337,7 @@
       "liver failure",
       "HE"
     ],
+    "patterns": [],
     "key": "elevated-ammonia"
   },
   {
@@ -320,6 +350,7 @@
       "DIC",
       "thromboembolism"
     ],
+    "patterns": [],
     "key": "elevated-d-dimer"
   },
   {
@@ -332,6 +363,7 @@
       "vitamin K",
       "FFP"
     ],
+    "patterns": [],
     "key": "elevated-inr"
   },
   {
@@ -344,6 +376,7 @@
       "myocardial infarction",
       "cardiac enzymes"
     ],
+    "patterns": [],
     "key": "elevated-tni-tnt-ck"
   },
   {
@@ -355,6 +388,9 @@
       "Resonium",
       "calcium gluconate",
       "DI drip"
+    ],
+    "patterns": [
+      "\\bk *[\\d.]+"
     ],
     "key": "hyperkalaemia"
   },
@@ -368,6 +404,7 @@
       "diabetes insipidus",
       "hyperNa"
     ],
+    "patterns": [],
     "key": "hypernatraemia"
   },
   {
@@ -379,6 +416,9 @@
       "KCl",
       "low potassium",
       "cardiac arrhythmia"
+    ],
+    "patterns": [
+      "\\bk *[\\d.]+"
     ],
     "key": "hypokalaemia"
   },
@@ -392,6 +432,7 @@
       "fluid restriction",
       "salt"
     ],
+    "patterns": [],
     "key": "hyponatraemia"
   },
   {
@@ -404,6 +445,7 @@
       "DIC",
       "TTP"
     ],
+    "patterns": [],
     "key": "thrombocytopenia"
   },
   {
@@ -416,6 +458,7 @@
       "ICD",
       "DNACPR"
     ],
+    "patterns": [],
     "key": "certification-of-death"
   }
 ]

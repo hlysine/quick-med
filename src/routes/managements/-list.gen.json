@@ -9,6 +9,7 @@
       "investigations",
       "drugs"
     ],
+    "patterns": [],
     "key": "david"
   },
   {
@@ -20,6 +21,7 @@
       "heart block",
       "sinus bradycardia"
     ],
+    "patterns": [],
     "key": "acls-bradycardia"
   },
   {
@@ -34,6 +36,7 @@
       "VT",
       "CPR"
     ],
+    "patterns": [],
     "key": "acls-cardiac-arrest"
   },
   {
@@ -48,6 +51,7 @@
       "AFib",
       "VT"
     ],
+    "patterns": [],
     "key": "acls-cardioversion"
   },
   {
@@ -58,6 +62,7 @@
       "AHA",
       "LVAD"
     ],
+    "patterns": [],
     "key": "acls-lvad"
   },
   {
@@ -68,6 +73,7 @@
       "AHA",
       "pregnancy"
     ],
+    "patterns": [],
     "key": "acls-pregnancy"
   },
   {
@@ -77,6 +83,7 @@
       "ACLS",
       "AHA"
     ],
+    "patterns": [],
     "key": "acls-tachycardia"
   },
   {
@@ -86,6 +93,7 @@
       "ACLS",
       "AHA"
     ],
+    "patterns": [],
     "key": "acls-termination"
   },
   {
@@ -96,6 +104,7 @@
       "AHA",
       "foreign body airway obstruction"
     ],
+    "patterns": [],
     "key": "bls-adult-fbao"
   },
   {
@@ -106,6 +115,7 @@
       "AHA",
       "out of hospital cardiac arrest"
     ],
+    "patterns": [],
     "key": "bls-adult"
   },
   {
@@ -116,6 +126,7 @@
       "AHA",
       "child cardiac arrest"
     ],
+    "patterns": [],
     "key": "bls-child-duel"
   },
   {
@@ -126,6 +137,7 @@
       "AHA",
       "foreign body airway obstruction"
     ],
+    "patterns": [],
     "key": "bls-child-fbao"
   },
   {
@@ -136,6 +148,7 @@
       "AHA",
       "child cardiac arrest"
     ],
+    "patterns": [],
     "key": "bls-child-single"
   },
   {
@@ -146,6 +159,7 @@
       "AHA",
       "foreign body airway obstruction"
     ],
+    "patterns": [],
     "key": "bls-infant-fbao"
   },
   {
@@ -155,6 +169,7 @@
       "BLS",
       "AHA"
     ],
+    "patterns": [],
     "key": "bls-termination"
   },
   {
@@ -164,6 +179,7 @@
       "adrenaline",
       "vasopressors"
     ],
+    "patterns": [],
     "key": "epinephrine"
   },
   {
@@ -173,6 +189,7 @@
       "Neonatal",
       "AHA"
     ],
+    "patterns": [],
     "key": "neonatal-resuscitation"
   },
   {
@@ -184,6 +201,7 @@
       "heart block",
       "sinus bradycardia"
     ],
+    "patterns": [],
     "key": "pals-bradycardia"
   },
   {
@@ -198,6 +216,7 @@
       "VT",
       "CPR"
     ],
+    "patterns": [],
     "key": "pals-cardiac-arrest"
   },
   {
@@ -207,6 +226,7 @@
       "PALS",
       "AHA"
     ],
+    "patterns": [],
     "key": "pals-tachycardia"
   },
   {
@@ -216,6 +236,7 @@
       "ACLS",
       "AHA"
     ],
+    "patterns": [],
     "key": "post-cardiac-arrest-care"
   }
 ]

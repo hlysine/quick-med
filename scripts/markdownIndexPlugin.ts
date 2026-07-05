@@ -14,6 +14,7 @@ interface FrontMatter {
   title: string;
   section: string;
   keywords: string[];
+  patterns: string[];
 }
 
 interface OutputEntry extends FrontMatter {
@@ -31,12 +32,14 @@ function parseFrontMatter(markdown: string): FrontMatter | undefined {
     typeof attributes !== 'object' ||
     !(typeof attributes.title === 'string') ||
     !(typeof attributes.section === 'string') ||
-    (attributes.keywords && !Array.isArray(attributes.keywords))
+    (attributes.keywords && !Array.isArray(attributes.keywords)) ||
+    (attributes.patterns && !Array.isArray(attributes.patterns))
   ) {
     console.warn('⚠️  Invalid or missing frontmatter in markdown file.');
     return undefined;
   }
   attributes.keywords = attributes.keywords ?? [];
+  attributes.patterns = attributes.patterns ?? [];
   return attributes;
 }
 

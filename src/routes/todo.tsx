@@ -7,8 +7,16 @@ import {
   useRef,
   useState,
 } from 'react';
-import { FaPlus } from 'react-icons/fa';
+import { FaPlus, FaLightbulb } from 'react-icons/fa';
 import { cn } from '../utils/uiUtils';
+import MouseDownLink from '../components/MouseDownLink';
+import type { TodoLinkMatch } from './-todoLinks';
+
+type TodoLinksModule = typeof import('./-todoLinks');
+
+function linkPath(page: TodoLinkMatch['page']) {
+  return `/${page.type}/${page.key}`;
+}
 
 type Urgency = 'high' | 'mid' | 'low';
 
@@ -81,6 +89,7 @@ type SortMode = 'entry' | 'urgency';
 interface TodoRowProps {
   todo: TodoItem;
   expanded: boolean;
+  linksModule: TodoLinksModule | null;
   onExpand: () => void;
   onCollapse: () => void;
   onToggleDone: () => void;
@@ -89,9 +98,104 @@ interface TodoRowProps {
   onRemove: () => void;
 }
 
+function HighlightedText({
+  text,
+  matches,
+  linksModule,
+}: {
+  text: string;
+  matches: TodoLinkMatch[];
+  linksModule: TodoLinksModule | null;
+}) {
+  const segments = useMemo(
+    () =>
+      linksModule
+        ? linksModule.buildHighlightSegments(text, matches)
+        : [{ text, highlighted: false }],
+    [text, matches, linksModule]
+  );
+  return (
+    <>
+      {segments.map((seg, i) =>
+        seg.highlighted ? (
+          <mark key={i} className="bg-warning/40 text-inherit rounded-xs">
+            {seg.text}
+          </mark>
+        ) : (
+          <span key={i}>{seg.text}</span>
+        )
+      )}
+    </>
+  );
+}
+
+function TodoLightbulb({ matches }: { matches: TodoLinkMatch[] }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  if (matches.length === 0) return null;
+
+  // Multiple pages could match the same pattern location; dedupe by target page
+  const uniquePages = matches.filter(
+    (m, i) =>
+      matches.findIndex(other => linkPath(other.page) === linkPath(m.page)) ===
+      i
+  );
+
+  if (uniquePages.length === 1) {
+    return (
+      <MouseDownLink
+        to={linkPath(uniquePages[0].page)}
+        className="btn btn-ghost btn-xs text-warning shrink-0 px-1"
+        onClick={e => e.stopPropagation()}
+        aria-label={`Open ${uniquePages[0].page.title}`}
+      >
+        <FaLightbulb size={20} />
+      </MouseDownLink>
+    );
+  }
+
+  return (
+    <div
+      className="dropdown dropdown-end shrink-0"
+      tabIndex={-1}
+      onBlur={() => setMenuOpen(false)}
+    >
+      <button
+        type="button"
+        className="btn btn-ghost btn-xs text-warning px-1"
+        onClick={e => {
+          e.stopPropagation();
+          setMenuOpen(o => !o);
+        }}
+        aria-label="Choose linked page"
+      >
+        <FaLightbulb size={20} />
+      </button>
+      {menuOpen && (
+        <ul
+          className="dropdown-content menu bg-base-200 rounded-box shadow-md z-10 w-48 p-1"
+          onClick={e => e.stopPropagation()}
+        >
+          {uniquePages.map(m => (
+            <li key={linkPath(m.page)}>
+              <MouseDownLink
+                to={linkPath(m.page)}
+                onClick={() => setMenuOpen(false)}
+              >
+                {m.page.title}
+              </MouseDownLink>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 function TodoRow({
   todo,
   expanded,
+  linksModule,
   onExpand,
   onCollapse,
   onToggleDone,
@@ -102,6 +206,10 @@ function TodoRow({
   const inputRef = useRef<HTMLInputElement>(null);
   // Prevents onBlur from collapsing when tapping interactive elements inside the row
   const stayRef = useRef(false);
+  const matches = useMemo(
+    () => (linksModule ? linksModule.findTodoLinks(todo.text) : []),
+    [todo.text, linksModule]
+  );
 
   const keepFocus = () => {
     stayRef.current = true;
@@ -205,8 +313,13 @@ function TodoRow({
           todo.done && 'line-through opacity-40'
         )}
       >
-        {todo.text}
+        <HighlightedText
+          text={todo.text}
+          matches={matches}
+          linksModule={linksModule}
+        />
       </span>
+      <TodoLightbulb matches={matches} />
       <span className="text-xs text-base-content/30 shrink-0 tabular-nums">
         {new Date(todo.createdAt).toLocaleTimeString([], {
           hour: '2-digit',
@@ -242,6 +355,17 @@ function TodoPage() {
   const listRef = useRef<HTMLUListElement>(null);
   // Snapshot of each item's top position from the previous render
   const prevPositions = useRef<Map<string, number>>(new Map());
+  const [linksModule, setLinksModule] = useState<TodoLinksModule | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    void import('./-todoLinks').then(mod => {
+      if (!cancelled) setLinksModule(mod);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     saveTodos(todos);
@@ -387,6 +511,7 @@ function TodoPage() {
                 key={todo.id}
                 todo={todo}
                 expanded={expandedId === todo.id}
+                linksModule={linksModule}
                 onExpand={() => {
                   if (collapseTimerRef.current) {
                     clearTimeout(collapseTimerRef.current);

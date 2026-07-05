@@ -7,6 +7,8 @@ keywords:
   - Resonium
   - calcium gluconate
   - DI drip
+patterns:
+  - \bk *[\d.]+
 ---
 
 **PROCESSED BY AI, UNVETTED**

@@ -37,6 +37,7 @@ export interface WikiMeta {
   title: string;
   section: string;
   keywords: string[];
+  patterns: string[];
 }
 
 export interface WikiPage extends WikiMeta {

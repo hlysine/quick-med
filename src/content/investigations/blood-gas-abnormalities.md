@@ -7,6 +7,8 @@ keywords:
   - acidosis
   - alkalosis
   - respiratory failure
+patterns:
+  - abg
 ---
 
 **PROCESSED BY AI, UNVETTED**

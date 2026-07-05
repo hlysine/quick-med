@@ -17,9 +17,31 @@ collections:
     create: false
     delete: false
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Section', name: 'section', widget: 'string' }
-      - { label: 'Keywords', name: 'keywords', widget: 'list' }
+      - {
+          label: 'Title',
+          name: 'title',
+          widget: 'string',
+          hint: 'Main page title. Should equal top header in markdown',
+        }
+      - {
+          label: 'Section',
+          name: 'section',
+          widget: 'string',
+          hint: 'For section grouping in list view',
+        }
+      - {
+          label: 'Keywords',
+          name: 'keywords',
+          widget: 'list',
+          hint: 'Search terms associated with this page',
+        }
+      - {
+          label: 'Todo link patterns',
+          name: 'patterns',
+          widget: 'list',
+          required: false,
+          hint: 'Case-insensitive regexes matched against todo text to link this page',
+        }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'conditions'
     label: 'Conditions'
@@ -27,9 +49,31 @@ collections:
     preview_path: 'conditions/{{slug}}'
     create: true
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Section', name: 'section', widget: 'string' }
-      - { label: 'Keywords', name: 'keywords', widget: 'list' }
+      - {
+          label: 'Title',
+          name: 'title',
+          widget: 'string',
+          hint: 'Main page title. Should equal top header in markdown',
+        }
+      - {
+          label: 'Section',
+          name: 'section',
+          widget: 'string',
+          hint: 'For section grouping in list view',
+        }
+      - {
+          label: 'Keywords',
+          name: 'keywords',
+          widget: 'list',
+          hint: 'Search terms associated with this page',
+        }
+      - {
+          label: 'Todo link patterns',
+          name: 'patterns',
+          widget: 'list',
+          required: false,
+          hint: 'Case-insensitive regexes matched against todo text to link this page',
+        }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'investigations'
     label: 'Investigations'
@@ -37,9 +81,31 @@ collections:
     preview_path: 'investigations/{{slug}}'
     create: true
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Section', name: 'section', widget: 'string' }
-      - { label: 'Keywords', name: 'keywords', widget: 'list' }
+      - {
+          label: 'Title',
+          name: 'title',
+          widget: 'string',
+          hint: 'Main page title. Should equal top header in markdown',
+        }
+      - {
+          label: 'Section',
+          name: 'section',
+          widget: 'string',
+          hint: 'For section grouping in list view',
+        }
+      - {
+          label: 'Keywords',
+          name: 'keywords',
+          widget: 'list',
+          hint: 'Search terms associated with this page',
+        }
+      - {
+          label: 'Todo link patterns',
+          name: 'patterns',
+          widget: 'list',
+          required: false,
+          hint: 'Case-insensitive regexes matched against todo text to link this page',
+        }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'managements'
     label: 'Managements'
@@ -47,7 +113,29 @@ collections:
     preview_path: 'managements/{{slug}}'
     create: true
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Section', name: 'section', widget: 'string' }
-      - { label: 'Keywords', name: 'keywords', widget: 'list' }
+      - {
+          label: 'Title',
+          name: 'title',
+          widget: 'string',
+          hint: 'Main page title. Should equal top header in markdown',
+        }
+      - {
+          label: 'Section',
+          name: 'section',
+          widget: 'string',
+          hint: 'For section grouping in list view',
+        }
+      - {
+          label: 'Keywords',
+          name: 'keywords',
+          widget: 'list',
+          hint: 'Search terms associated with this page',
+        }
+      - {
+          label: 'Todo link patterns',
+          name: 'patterns',
+          widget: 'list',
+          required: false,
+          hint: 'Case-insensitive regexes matched against todo text to link this page',
+        }
       - { label: 'Body', name: 'body', widget: 'markdown' }
