@@ -8,6 +8,8 @@ keywords:
   - VT
   - cardioversion
   - arrhythmia
+patterns:
+  - \b(p|pulse|hr) *[\d.]+
 ---
 
 # Tachycardia

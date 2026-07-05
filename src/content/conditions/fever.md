@@ -7,6 +7,9 @@ keywords:
   - infection
   - neutropenic fever
   - antibiotics
+patterns:
+  - \btemp *[\d.]+
+  - \bfever
 ---
 
 **PROCESSED BY AI, UNVETTED**

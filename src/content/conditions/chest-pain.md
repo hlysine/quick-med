@@ -7,6 +7,8 @@ keywords:
   - angina
   - aortic dissection
   - pleuritic
+patterns:
+  - \bchest *pain
 ---
 
 **PROCESSED BY AI, UNVETTED**

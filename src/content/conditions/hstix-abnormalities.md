@@ -8,6 +8,11 @@ keywords:
   - DKA
   - HHS
   - diabetes
+patterns:
+  - \bhstix
+  - \bglucose
+  - \bhypergly
+  - \bhypogly
 ---
 
 **PROCESSED BY AI, UNVETTED**

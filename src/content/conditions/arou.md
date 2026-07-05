@@ -7,6 +7,9 @@ keywords:
   - BPH
   - foley
   - bladder outlet obstruction
+patterns:
+  - \barou
+  - \bbladder scan
 ---
 
 **PROCESSED BY AI, UNVETTED**

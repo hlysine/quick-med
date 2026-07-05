@@ -7,6 +7,8 @@ keywords:
   - atropine
   - pacing
   - arrhythmia
+patterns:
+  - \b(p|pulse|hr) *[\d.]+
 ---
 
 # Bradycardia

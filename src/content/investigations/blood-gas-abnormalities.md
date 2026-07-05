@@ -8,7 +8,7 @@ keywords:
   - alkalosis
   - respiratory failure
 patterns:
-  - abg
+  - \babg
 ---
 
 **PROCESSED BY AI, UNVETTED**

@@ -8,6 +8,10 @@ keywords:
   - antihypertensive
   - SBP
   - stroke
+patterns:
+  - \bbp *[\d.]+
+  - \bHT
+  - \bhypertension
 ---
 
 # Hypertension

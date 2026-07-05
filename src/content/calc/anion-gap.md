@@ -5,6 +5,8 @@ keywords:
   - Sodium
   - Chloride
   - Bicarbonate
+patterns:
+  - abg
 ---
 
 Anion gap = Sodium - Chloride - Bicarbonate

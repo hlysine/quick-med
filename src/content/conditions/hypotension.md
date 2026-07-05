@@ -8,6 +8,10 @@ keywords:
   - cardiogenic
   - obstructive
   - SBP
+patterns:
+  - \bbp *[\d.]+
+  - \bshock
+  - \bhypotension
 ---
 
 # Hypotension
