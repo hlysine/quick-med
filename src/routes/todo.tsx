@@ -297,7 +297,10 @@ function TodoPage() {
     () =>
       [...todos].sort((a, b) => {
         if (a.done !== b.done) return a.done ? 1 : -1;
-        if (sort === 'entry') return a.createdAt - b.createdAt;
+        if (sort === 'entry') {
+          if (a.done) return b.createdAt - a.createdAt;
+          else return a.createdAt - b.createdAt;
+        }
         const urgencyDiff = URGENCY_ORDER[a.urgency] - URGENCY_ORDER[b.urgency];
         return urgencyDiff !== 0 ? urgencyDiff : a.text.localeCompare(b.text);
       }),
