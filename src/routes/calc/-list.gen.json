@@ -84,7 +84,9 @@
       "Chloride",
       "Bicarbonate"
     ],
-    "patterns": [],
+    "patterns": [
+      "abg"
+    ],
     "key": "anion-gap"
   },
   {

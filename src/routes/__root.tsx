@@ -47,20 +47,11 @@ function Dock() {
 export const Route = createRootRoute({
   component: () => (
     <div className="w-full h-full flex flex-col">
-      <nav className="navbar py-0 bg-base-300 shadow-sm justify-between hide-on-type">
-        <div className="breadcrumbs text-sm ms-2">
-          <ul>
-            <li>
-              <a href="https://lysine-med.hf.space/">Med</a>
-            </li>
-            <li>
-              <MouseDownLink to="/" className="btn btn-ghost text-xl">
-                <img src="/logo.svg" alt="Logo" className="h-8 mr-2" />
-                Quick Med
-              </MouseDownLink>
-            </li>
-          </ul>
-        </div>
+      <nav className="navbar py-1 bg-base-300 shadow-sm justify-between hide-on-type">
+        <MouseDownLink to="/" className="btn btn-ghost text-xl">
+          <img src="/logo.svg" alt="Logo" className="h-8 mr-2" />
+          Quick Med
+        </MouseDownLink>
         <div className="flex gap-1 items-center">
           <PWAPrompt />
           <ThemeToggle />

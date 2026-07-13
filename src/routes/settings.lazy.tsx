@@ -2,8 +2,9 @@ import { createLazyFileRoute } from '@tanstack/react-router';
 import { SiteSettings, useSettings } from '../components/SettingsContext';
 import { dockTabs } from './-tabs';
 import { cn } from '../utils/uiUtils';
-import { useMemo } from 'react';
+import { Suspense, use, useMemo } from 'react';
 import { useRegisterSW } from 'virtual:pwa-register/react';
+import StyledMarkdown from '../components/markdown/StyledMarkdown';
 
 async function cleanReload() {
   try {
@@ -17,6 +18,51 @@ async function cleanReload() {
   } finally {
     window.location.href = new URL(window.location.href).origin;
   }
+}
+
+const changelogPromise = import('../../CHANGELOG.md?raw').then(module =>
+  module.default.replace(/\r\n|\r|\n/g, '\n')
+);
+function ChangelogText() {
+  const content = use(changelogPromise);
+  return <StyledMarkdown>{content}</StyledMarkdown>;
+}
+
+function Changelog() {
+  return (
+    <div className="w-full flex flex-col">
+      <button
+        className="btn"
+        onClick={() =>
+          (
+            document.getElementById('changelog_modal') as HTMLDialogElement
+          ).showModal()
+        }
+      >
+        Open changelog
+      </button>
+      <dialog id="changelog_modal" className="modal">
+        <div className="modal-box max-h-[90%]">
+          <div className="flex items-center w-full justify-between">
+            <h3 className="font-bold text-lg">Changelog</h3>
+            <form method="dialog">
+              <button className="btn btn-sm btn-circle btn-ghost">✕</button>
+            </form>
+          </div>
+          <Suspense
+            fallback={
+              <span className="skeleton block w-full max-w-100 h-screen my-4"></span>
+            }
+          >
+            <ChangelogText />
+          </Suspense>
+        </div>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
+    </div>
+  );
 }
 
 function SettingsToggle({
@@ -154,10 +200,11 @@ function Settings() {
   return (
     <div className="flex-1 flex p-4 flex-col gap-2 w-full mt-2 max-w-250 self-center overflow-y-auto *:shrink-0">
       <h1 className="text-4xl font-bold">Quick Med</h1>
-      <p className="text-xl">Acute medicine quick reference</p>
+      <p className="text-xl">On-call helper</p>
       <p className="text-sm">
-        Version {String(import.meta.env.VITE_PACKAGE_VERSION).substring(0, 7)}
+        Version {String(import.meta.env.VITE_PACKAGE_VERSION)}
       </p>
+      <Changelog />
       <div className="divider" />
       {isPWA ? (
         <p>Successfully installed as a Progressive Web App.</p>

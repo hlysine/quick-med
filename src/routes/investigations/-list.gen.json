@@ -310,7 +310,7 @@
       "respiratory failure"
     ],
     "patterns": [
-      "abg"
+      "\\babg"
     ],
     "key": "blood-gas-abnormalities"
   },

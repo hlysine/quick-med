@@ -5,11 +5,19 @@ import { VitePWA } from 'vite-plugin-pwa';
 import tailwindcss from '@tailwindcss/vite';
 import { markdownIndex } from './scripts/markdownIndexPlugin';
 import { resolve } from 'path';
-import { execSync } from 'child_process';
 
-const commitHash =
-  process.env.RAILWAY_GIT_COMMIT_SHA ??
-  execSync('git rev-parse HEAD').toString().trim();
+const buildRef = new Intl.DateTimeFormat('en-GB', {
+  timeZone: 'Asia/Hong_Kong',
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: false,
+})
+  .format(new Date())
+  .replace(/\//g, '-')
+  .replace(',', '');
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -142,6 +150,6 @@ export default defineConfig({
     }),
   ],
   define: {
-    'import.meta.env.VITE_PACKAGE_VERSION': JSON.stringify(commitHash),
+    'import.meta.env.VITE_PACKAGE_VERSION': JSON.stringify(buildRef),
   },
 });

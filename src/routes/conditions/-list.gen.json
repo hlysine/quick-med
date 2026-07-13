@@ -9,7 +9,9 @@
       "pacing",
       "arrhythmia"
     ],
-    "patterns": [],
+    "patterns": [
+      "\\b(p|pulse|hr) *[\\d.]+"
+    ],
     "key": "bradycardia"
   },
   {
@@ -62,7 +64,10 @@
       "neutropenic fever",
       "antibiotics"
     ],
-    "patterns": [],
+    "patterns": [
+      "\\btemp *[\\d.]+",
+      "\\bfever"
+    ],
     "key": "fever"
   },
   {
@@ -76,7 +81,12 @@
       "HHS",
       "diabetes"
     ],
-    "patterns": [],
+    "patterns": [
+      "\\bhstix",
+      "\\bglucose",
+      "\\bhypergly",
+      "\\bhypogly"
+    ],
     "key": "hstix-abnormalities"
   },
   {
@@ -90,7 +100,11 @@
       "SBP",
       "stroke"
     ],
-    "patterns": [],
+    "patterns": [
+      "\\bbp *[\\d.]+",
+      "\\bHT",
+      "\\bhypertension"
+    ],
     "key": "hypertension"
   },
   {
@@ -104,7 +118,11 @@
       "obstructive",
       "SBP"
     ],
-    "patterns": [],
+    "patterns": [
+      "\\bbp *[\\d.]+",
+      "\\bshock",
+      "\\bhypotension"
+    ],
     "key": "hypotension"
   },
   {
@@ -130,7 +148,9 @@
       "cardioversion",
       "arrhythmia"
     ],
-    "patterns": [],
+    "patterns": [
+      "\\b(p|pulse|hr) *[\\d.]+"
+    ],
     "key": "tachycardia"
   },
   {
@@ -169,7 +189,10 @@
       "foley",
       "bladder outlet obstruction"
     ],
-    "patterns": [],
+    "patterns": [
+      "\\barou",
+      "\\bbladder scan"
+    ],
     "key": "arou"
   },
   {
@@ -221,7 +244,9 @@
       "aortic dissection",
       "pleuritic"
     ],
-    "patterns": [],
+    "patterns": [
+      "\\bchest *pain"
+    ],
     "key": "chest-pain"
   },
   {

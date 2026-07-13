@@ -25,7 +25,19 @@ interface TodoItem {
   text: string;
   urgency: Urgency;
   createdAt: number;
-  done: boolean;
+  completedAt: number | null;
+}
+
+interface TodoItemLegacy {
+  id: string;
+  text: string;
+  urgency: Urgency;
+  createdAt: number;
+  completedAt: number | null;
+  /**
+   * legacy field
+   */
+  done?: boolean;
 }
 
 const STORAGE_KEY = 'quickmed-todos';
@@ -38,7 +50,7 @@ function loadTodos(): TodoItem[] {
     if (!Array.isArray(parsed)) return [];
     return parsed
       .filter(
-        (item: unknown): item is TodoItem =>
+        (item: unknown): item is TodoItemLegacy =>
           typeof item === 'object' &&
           item !== null &&
           'id' in item &&
@@ -52,7 +64,11 @@ function loadTodos(): TodoItem[] {
             item.urgency === 'low') &&
           typeof item.createdAt === 'number'
       )
-      .map(item => ({ ...item, done: Boolean(item.done) }));
+      .map(item =>
+        Number.isFinite(item.completedAt)
+          ? { ...item, completedAt: item.completedAt }
+          : { ...item, completedAt: item.done ? item.createdAt : null }
+      );
   } catch {
     return [];
   }
@@ -145,7 +161,7 @@ function TodoLightbulb({ matches }: { matches: TodoLinkMatch[] }) {
     return (
       <MouseDownLink
         to={linkPath(uniquePages[0].page)}
-        className="btn btn-ghost btn-xs text-warning shrink-0 px-1"
+        className="btn btn-ghost btn-sm text-warning shrink-0 px-1 -ml-1"
         onClick={e => e.stopPropagation()}
         aria-label={`Open ${uniquePages[0].page.title}`}
       >
@@ -162,7 +178,7 @@ function TodoLightbulb({ matches }: { matches: TodoLinkMatch[] }) {
     >
       <button
         type="button"
-        className="btn btn-ghost btn-xs text-warning px-1"
+        className="btn btn-ghost btn-sm text-warning px-1 -ml-1"
         onClick={e => {
           e.stopPropagation();
           setMenuOpen(o => !o);
@@ -228,7 +244,7 @@ function TodoRow({
           <input
             type="checkbox"
             className="checkbox checkbox-sm shrink-0"
-            checked={todo.done}
+            checked={todo.completedAt !== null}
             onPointerDown={keepFocus}
             onChange={() => {
               onToggleDone();
@@ -289,19 +305,19 @@ function TodoRow({
   return (
     <li
       data-id={todo.id}
-      className="flex items-center gap-2 px-3 py-3 hover:bg-base-200 active:bg-base-300 transition-colors"
+      className="flex items-center px-3 py-3 hover:bg-base-200 active:bg-base-300 transition-colors"
       onClick={onExpand}
     >
       <input
         type="checkbox"
         className="checkbox checkbox-sm shrink-0"
-        checked={todo.done}
+        checked={todo.completedAt !== null}
         onChange={onToggleDone}
         onClick={e => e.stopPropagation()}
       />
       <span
         className={cn(
-          'badge badge-sm shrink-0 w-10 justify-center',
+          'badge badge-sm shrink-0 w-10 justify-center mx-1',
           URGENCY_BADGE[todo.urgency]
         )}
       >
@@ -309,8 +325,8 @@ function TodoRow({
       </span>
       <span
         className={cn(
-          'flex-1 text-base leading-snug wrap-break-word min-w-0',
-          todo.done && 'line-through opacity-40'
+          'flex-1 text-base leading-snug wrap-break-word min-w-0 mr-1',
+          todo.completedAt !== null && 'line-through opacity-40'
         )}
       >
         <HighlightedText
@@ -328,7 +344,7 @@ function TodoRow({
       </span>
       <button
         type="button"
-        className="btn btn-ghost btn-sm text-base-content/30 hover:text-error shrink-0 -mr-1"
+        className="btn btn-ghost btn-sm text-base-content/30 hover:text-error shrink-0 -mx-1"
         onClick={e => {
           e.stopPropagation();
           onRemove();
@@ -390,7 +406,7 @@ function TodoPage() {
           text: trimmed,
           urgency: u,
           createdAt: Date.now(),
-          done: false,
+          completedAt: null,
         },
       ]);
       setText('');
@@ -420,10 +436,13 @@ function TodoPage() {
   const sorted = useMemo(
     () =>
       [...todos].sort((a, b) => {
-        if (a.done !== b.done) return a.done ? 1 : -1;
+        if ((a.completedAt === null) !== (b.completedAt === null))
+          return a.completedAt !== null ? 1 : -1;
+        if (a.completedAt !== null && b.completedAt !== null) {
+          return b.completedAt - a.completedAt;
+        }
         if (sort === 'entry') {
-          if (a.done) return b.createdAt - a.createdAt;
-          else return a.createdAt - b.createdAt;
+          return a.createdAt - b.createdAt;
         }
         const urgencyDiff = URGENCY_ORDER[a.urgency] - URGENCY_ORDER[b.urgency];
         return urgencyDiff !== 0 ? urgencyDiff : a.text.localeCompare(b.text);
@@ -525,7 +544,13 @@ function TodoPage() {
                     0
                   );
                 }}
-                onToggleDone={() => updateTodo(todo.id, 'done', !todo.done)}
+                onToggleDone={() =>
+                  updateTodo(
+                    todo.id,
+                    'completedAt',
+                    todo.completedAt === null ? Date.now() : null
+                  )
+                }
                 onUpdateText={val => updateTodo(todo.id, 'text', val)}
                 onUpdateUrgency={u => updateTodo(todo.id, 'urgency', u)}
                 onRemove={() => removeTodo(todo.id)}
