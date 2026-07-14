@@ -24,6 +24,11 @@ keywords:
 * Bubbling (if for PTX)
 * May or may not need suction
 
+|             | Swing                                     | No swing                   |
+|-------------|-------------------------------------------|----------------------------|
+| Bubbling    | - Functioning drain<br>- Ongoing air leak | Drain disconnected         |
+| No bubbling | - Functioning drain<br>- No air leak      | - Blocked drain<br>- Fully expanded lung |
+
 ## No bubbling, No swinging - what to do?
 
 ### Causes
@@ -51,6 +56,26 @@ keywords:
     * Connection of drain to chest drain box - is it secure/ tight?
 * **Patient air leak:** increases during cough/ prolonged speech
     * If persistent air leak (beyond 3-5 days) for PTX: CT thorax, consult CTS (may have fistula)
+
+## Pleural effusion
+
+Tests to order for pleural fluid
+- Cell count + differential
+- Light's criteria
+  - Total protein, LDH
+- Bacterial culture
+  - Plain, culture bottle if high suspicion
+- AFB + TB culture
+- ADA
+- pH on ice
+- Glucose
+- Cytology x3
+  - Requires full bottles
+
+> **Light's criteria**
+> - Pleural fluid to serum protein ratio > 0.5
+> - Pleural fluid to serum LDH ratio > 0.6
+> - Pleural fluid LDH > 2/3 of the normal upper limit for serum LDH
 
 ## Pneumothorax Treatment Algorithm (BTS Pleural Disease Guideline 2010)
 
