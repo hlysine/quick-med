@@ -40,7 +40,7 @@ interface TodoItemLegacy {
   done?: boolean;
 }
 
-const STORAGE_KEY = 'quickmed-todos';
+export const STORAGE_KEY = 'quickmed-todos';
 
 function loadTodos(): TodoItem[] {
   try {

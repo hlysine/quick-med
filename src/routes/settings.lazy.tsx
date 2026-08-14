@@ -2,9 +2,16 @@ import { createLazyFileRoute } from '@tanstack/react-router';
 import { SiteSettings, useSettings } from '../components/SettingsContext';
 import { dockTabs } from './-tabs';
 import { cn, isPWA } from '../utils/uiUtils';
-import { Suspense, use } from 'react';
+import { Suspense, use, useCallback, useEffect, useRef, useState } from 'react';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 import StyledMarkdown from '../components/markdown/StyledMarkdown';
+import { QRCode } from 'react-qr-code';
+import {
+  buildImportLink,
+  getTransferApiBase,
+  uploadLocalData,
+  type TransferUpload,
+} from '../utils/quickTransfer';
 
 async function cleanReload() {
   try {
@@ -193,6 +200,125 @@ function ClearBookmarks() {
   );
 }
 
+function QuickTransfer() {
+  const configured = getTransferApiBase() !== '';
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const [transfer, setTransfer] = useState<TransferUpload | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const upload = useCallback(async () => {
+    setUploading(true);
+    try {
+      setTransfer(await uploadLocalData());
+      setError(null);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Upload failed.');
+    } finally {
+      setUploading(false);
+    }
+  }, []);
+
+  // Data expires after 10 minutes, so re-upload every minute
+  // to keep the QR code pointing at a fresh ID.
+  useEffect(() => {
+    if (!transfer) return;
+    const interval = setInterval(() => void upload(), 60_000);
+    return () => clearInterval(interval);
+  }, [transfer, upload]);
+
+  const reset = useCallback(() => {
+    setTransfer(null);
+    setUploading(false);
+    setError(null);
+    setCopied(false);
+  }, []);
+
+  const copyLink = useCallback(async (link: string) => {
+    try {
+      await navigator.clipboard.writeText(link);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard unavailable
+    }
+  }, []);
+
+  const link = transfer ? buildImportLink(transfer.id) : null;
+
+  return (
+    <div className="w-full flex flex-col">
+      <button
+        className={cn('btn', !configured && 'btn-disabled')}
+        onClick={() => dialogRef.current?.showModal()}
+      >
+        Quick transfer
+      </button>
+      <p className="text-sm text-error mt-2">
+        Transfer all data to another device by scanning a QR code.
+        {!configured && ' (Unavailable: transfer service not configured.)'}
+      </p>
+      <dialog ref={dialogRef} className="modal" onClose={reset}>
+        <div className="modal-box flex flex-col gap-4">
+          <h3 className="font-bold text-lg">Quick transfer</h3>
+          {link && transfer ? (
+            <>
+              <div className="self-center bg-white p-2 rounded-box">
+                <QRCode value={link} size={220} />
+              </div>
+              <p className="text-sm">
+                Scan this code to import your data. Data expires at{' '}
+                {new Date(transfer.expiresAt).toLocaleTimeString([], {
+                  hour: '2-digit',
+                  minute: '2-digit',
+                })}
+              </p>
+              {error && <p className="text-sm text-error">{error}</p>}
+              <button
+                type="button"
+                className="btn"
+                onClick={() => void copyLink(link)}
+              >
+                {copied ? 'Copied!' : 'Copy link'}
+              </button>
+              <form method="dialog">
+                <button className="btn w-full">Done</button>
+              </form>
+            </>
+          ) : uploading ? (
+            <span className="loading loading-spinner loading-lg self-center my-8" />
+          ) : (
+            <>
+              <p>
+                Your local data (settings and tasks) will be{' '}
+                <b>temporarily uploaded to a server</b> for transfer. The data
+                is only retained for <b>10 minutes</b>.
+              </p>
+              {error && <p className="text-sm text-error">{error}</p>}
+              <div className="modal-action">
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={() => void upload()}
+                >
+                  Continue
+                </button>
+                <form method="dialog">
+                  <button className="btn">Cancel</button>
+                </form>
+              </div>
+            </>
+          )}
+        </div>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
+    </div>
+  );
+}
+
 function SuggestEdits() {
   return (
     <div className="w-full flex flex-col">
@@ -260,6 +386,7 @@ function Settings() {
           <DockTabToggles />
         </div>
         <ClearBookmarks />
+        <QuickTransfer />
         <SuggestEdits />
         <ForceUpdate />
       </div>

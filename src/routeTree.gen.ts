@@ -15,6 +15,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Route as rootRoute } from './routes/__root'
 import { Route as TodoImport } from './routes/todo'
 import { Route as SearchImport } from './routes/search'
+import { Route as ImportImport } from './routes/import'
 import { Route as IndexImport } from './routes/index'
 import { Route as ManagementsIndexImport } from './routes/managements/index'
 import { Route as InvestigationsIndexImport } from './routes/investigations/index'
@@ -58,6 +59,12 @@ const TodoRoute = TodoImport.update({
 const SearchRoute = SearchImport.update({
   id: '/search',
   path: '/search',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ImportRoute = ImportImport.update({
+  id: '/import',
+  path: '/import',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -200,6 +207,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/import': {
+      id: '/import'
+      path: '/import'
+      fullPath: '/import'
+      preLoaderRoute: typeof ImportImport
       parentRoute: typeof rootRoute
     }
     '/search': {
@@ -370,6 +384,7 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/import': typeof ImportRoute
   '/search': typeof SearchRoute
   '/todo': typeof TodoRoute
   '/settings': typeof SettingsLazyRoute
@@ -397,6 +412,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/import': typeof ImportRoute
   '/search': typeof SearchRoute
   '/todo': typeof TodoRoute
   '/settings': typeof SettingsLazyRoute
@@ -425,6 +441,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/import': typeof ImportRoute
   '/search': typeof SearchRoute
   '/todo': typeof TodoRoute
   '/settings': typeof SettingsLazyRoute
@@ -454,6 +471,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/import'
     | '/search'
     | '/todo'
     | '/settings'
@@ -480,6 +498,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/import'
     | '/search'
     | '/todo'
     | '/settings'
@@ -506,6 +525,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/import'
     | '/search'
     | '/todo'
     | '/settings'
@@ -534,6 +554,7 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ImportRoute: typeof ImportRoute
   SearchRoute: typeof SearchRoute
   TodoRoute: typeof TodoRoute
   SettingsLazyRoute: typeof SettingsLazyRoute
@@ -561,6 +582,7 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ImportRoute: ImportRoute,
   SearchRoute: SearchRoute,
   TodoRoute: TodoRoute,
   SettingsLazyRoute: SettingsLazyRoute,
@@ -597,6 +619,7 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/import",
         "/search",
         "/todo",
         "/settings",
@@ -624,6 +647,9 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/import": {
+      "filePath": "import.tsx"
     },
     "/search": {
       "filePath": "search.tsx"

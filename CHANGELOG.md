@@ -3,6 +3,7 @@
 - Task sort order now persist across restarts
 - Only completed tasks are now cleared
 - Added a setting to configure default startup page
+- Added Quick Transfer
 
 ## 14/7/2026
 

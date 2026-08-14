@@ -152,4 +152,16 @@ export default defineConfig({
   define: {
     'import.meta.env.VITE_PACKAGE_VERSION': JSON.stringify(buildRef),
   },
+  server: {
+    proxy: {
+      // Shorthand for simple forwarding
+      '/transfer': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/transfer/, ''),
+        secure: false,
+        ws: true,
+      },
+    },
+  },
 });
