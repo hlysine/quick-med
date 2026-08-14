@@ -4,6 +4,18 @@ import { z } from 'zod';
 export const SiteSettingsSchema = z.object({
   isDark: z.boolean().default(false).catch(false),
   hiddenTabs: z.array(z.string()).default([]).catch([]),
+  startupPage: z
+    .enum([
+      '/',
+      '/calc',
+      '/conditions',
+      '/investigations',
+      '/managements',
+      '/search',
+      '/todo',
+    ])
+    .default('/')
+    .catch('/'),
   bookmarks: z
     .array(
       z.object({

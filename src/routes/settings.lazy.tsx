@@ -1,8 +1,8 @@
 import { createLazyFileRoute } from '@tanstack/react-router';
 import { SiteSettings, useSettings } from '../components/SettingsContext';
 import { dockTabs } from './-tabs';
-import { cn } from '../utils/uiUtils';
-import { Suspense, use, useMemo } from 'react';
+import { cn, isPWA } from '../utils/uiUtils';
+import { Suspense, use } from 'react';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 import StyledMarkdown from '../components/markdown/StyledMarkdown';
 
@@ -84,6 +84,38 @@ function SettingsToggle({
         checked={value}
         onChange={e => setValue(e.target.checked)}
       />
+    </label>
+  );
+}
+
+const STARTUP_PAGES: { to: SiteSettings['startupPage']; name: string }[] = [
+  { to: '/', name: 'Home page' },
+  { to: '/calc', name: 'Calculators' },
+  { to: '/conditions', name: 'Conditions' },
+  { to: '/investigations', name: 'Ix' },
+  { to: '/managements', name: 'Mx' },
+  { to: '/search', name: 'Search' },
+  { to: '/todo', name: 'Tasks' },
+];
+
+function StartupPageSelect() {
+  const [startupPage, setStartupPage] = useSettings('startupPage');
+  return (
+    <label className="label inline-flex justify-between items-center gap-4">
+      <span className="text-base-content">Startup page</span>
+      <select
+        className="select select-bordered max-w-40"
+        value={startupPage}
+        onChange={e =>
+          setStartupPage(e.target.value as SiteSettings['startupPage'])
+        }
+      >
+        {STARTUP_PAGES.map(page => (
+          <option key={page.to} value={page.to}>
+            {page.name}
+          </option>
+        ))}
+      </select>
     </label>
   );
 }
@@ -188,12 +220,7 @@ function ForceUpdate() {
 }
 
 function Settings() {
-  const isPWA = useMemo(() => {
-    return ['fullscreen', 'standalone', 'minimal-ui'].some(
-      displayMode =>
-        window.matchMedia('(display-mode: ' + displayMode + ')').matches
-    );
-  }, []);
+  const pwa = isPWA();
   const {
     needRefresh: [needRefresh],
   } = useRegisterSW();
@@ -206,7 +233,7 @@ function Settings() {
       </p>
       <Changelog />
       <div className="divider" />
-      {isPWA ? (
+      {pwa ? (
         <p>Successfully installed as a Progressive Web App.</p>
       ) : (
         <p>
@@ -227,6 +254,7 @@ function Settings() {
           settingsKey="isDark"
           label="Use Dark Mode"
         />
+        <StartupPageSelect />
         <div className="flex flex-col gap-2">
           <h3 className="font-semibold">Dock tabs</h3>
           <DockTabToggles />

@@ -1,7 +1,14 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute, redirect } from '@tanstack/react-router';
 import { pinnedTabs, Tab, tabs } from './-tabs';
 import MouseDownLink from '../components/MouseDownLink';
 import BookmarkList from '../components/BookmarkList';
+import { settingsStore } from '../components/SettingsContext';
+
+// Captured at app boot: the startup redirect applies only when the site is
+// loaded directly at the root URL (PWA launch, page refresh, typed URL).
+// Direct loads of other pages and in-app navigation to root skip it.
+const bootedAtRoot = window.location.pathname === '/';
+let startupRedirectDone = false;
 
 function HomePageIcon({ tab }: { tab: Tab }) {
   return (
@@ -45,5 +52,13 @@ function HomePage() {
 }
 
 export const Route = createFileRoute('/')({
+  beforeLoad: ({ preload }) => {
+    // Links to '/' are preloaded on sight; only redirect real navigations
+    if (preload) return;
+    const startupPage = settingsStore.get('startupPage');
+    if (startupPage === '/' || !bootedAtRoot || startupRedirectDone) return;
+    startupRedirectDone = true;
+    return redirect({ to: startupPage });
+  },
   component: HomePage,
 });
