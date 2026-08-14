@@ -362,7 +362,10 @@ function TodoRow({
 function TodoPage() {
   const [todos, setTodos] = useState<TodoItem[]>(loadTodos);
   const [text, setText] = useState(localStorage.getItem('todo-text') ?? '');
-  const [sort, setSort] = useState<SortMode>('entry');
+  const [sort, setSort] = useState<SortMode>(() => {
+    const saved = localStorage.getItem('todo-sort');
+    return saved === 'entry' || saved === 'urgency' ? saved : 'entry';
+  });
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const collapseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [showClearModal, setShowClearModal] = useState(false);
@@ -390,6 +393,10 @@ function TodoPage() {
   useEffect(() => {
     localStorage.setItem('todo-text', text);
   }, [text]);
+
+  useEffect(() => {
+    localStorage.setItem('todo-sort', sort);
+  }, [sort]);
 
   useEffect(() => {
     if (showClearModal) clearModalRef.current?.showModal();
@@ -427,8 +434,8 @@ function TodoPage() {
     []
   );
 
-  const clearAll = useCallback(() => {
-    setTodos([]);
+  const clearCompleted = useCallback(() => {
+    setTodos(prev => prev.filter(t => t.completedAt === null));
     setExpandedId(null);
     setShowClearModal(false);
   }, []);
@@ -449,6 +456,8 @@ function TodoPage() {
       }),
     [todos, sort]
   );
+
+  const completedCount = todos.filter(t => t.completedAt !== null).length;
 
   // FLIP: after each render, animate items from their old positions to their new ones
   useLayoutEffect(() => {
@@ -506,13 +515,13 @@ function TodoPage() {
           type="button"
           className={cn(
             'btn btn-sm btn-ghost text-error',
-            todos.length === 0 && 'btn-disabled opacity-40'
+            completedCount === 0 && 'btn-disabled opacity-40'
           )}
           onClick={() => {
-            if (todos.length > 0) setShowClearModal(true);
+            if (completedCount > 0) setShowClearModal(true);
           }}
         >
-          Clear all
+          Clear completed
         </button>
       </div>
 
@@ -605,15 +614,15 @@ function TodoPage() {
         onClose={() => setShowClearModal(false)}
       >
         <div className="modal-box">
-          <p className="font-semibold">Clear all tasks?</p>
+          <p className="font-semibold">Clear completed tasks?</p>
           <p className="text-sm text-base-content/60 mt-1">
-            {todos.length} task{todos.length !== 1 ? 's' : ''} will be removed.
-            This cannot be undone.
+            {completedCount} task{completedCount !== 1 ? 's' : ''} will be
+            removed. This cannot be undone.
           </p>
           <div className="modal-action">
             <form method="dialog">
-              <button className="btn btn-error" onClick={clearAll}>
-                Clear all
+              <button className="btn btn-error" onClick={clearCompleted}>
+                Clear completed
               </button>
             </form>
             <form method="dialog">
