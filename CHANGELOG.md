@@ -1,3 +1,9 @@
+## 14/8/2026
+
+- Task sort order now persist across restarts
+- Only completed tasks are now cleared
+- Added a setting to configure default startup page
+
 ## 14/7/2026
 
 - Edited page "Chest Drain Related Problems"
