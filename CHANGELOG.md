@@ -1,3 +1,9 @@
+## 24/8/2026
+
+- Checking a task while editing now collapses it
+- Fixed screen flickering when editing a task while sorting by urgency
+- Added Creatinine Clearance calculator
+
 ## 14/8/2026
 
 - Task sort order now persist across restarts
