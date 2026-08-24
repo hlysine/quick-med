@@ -100,6 +100,21 @@ const URGENCY_LABEL: Record<Urgency, string> = {
 
 type SortMode = 'entry' | 'urgency';
 
+function sortTodos(todos: TodoItem[], sort: SortMode): TodoItem[] {
+  return [...todos].sort((a, b) => {
+    if ((a.completedAt === null) !== (b.completedAt === null))
+      return a.completedAt !== null ? 1 : -1;
+    if (a.completedAt !== null && b.completedAt !== null) {
+      return b.completedAt - a.completedAt;
+    }
+    if (sort === 'entry') {
+      return a.createdAt - b.createdAt;
+    }
+    const urgencyDiff = URGENCY_ORDER[a.urgency] - URGENCY_ORDER[b.urgency];
+    return urgencyDiff !== 0 ? urgencyDiff : a.text.localeCompare(b.text);
+  });
+}
+
 // ── TodoRow ──────────────────────────────────────────────────────────────────
 
 interface TodoRowProps {
@@ -366,6 +381,11 @@ function TodoPage() {
     const saved = localStorage.getItem('todo-sort');
     return saved === 'entry' || saved === 'urgency' ? saved : 'entry';
   });
+  // Display order, decoupled from live edits: only recomputed by resort(),
+  // so typing in an expanded row doesn't reshuffle the list on each keystroke.
+  const [sortedIds, setSortedIds] = useState<string[]>(() =>
+    sortTodos(todos, sort).map(t => t.id)
+  );
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const collapseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [showClearModal, setShowClearModal] = useState(false);
@@ -402,12 +422,16 @@ function TodoPage() {
     if (showClearModal) clearModalRef.current?.showModal();
   }, [showClearModal]);
 
+  const resort = useCallback((next: TodoItem[], mode: SortMode) => {
+    setSortedIds(sortTodos(next, mode).map(t => t.id));
+  }, []);
+
   const addTodo = useCallback(
     (u: Urgency) => {
       const trimmed = text.trim();
       if (!trimmed) return;
-      setTodos(prev => [
-        ...prev,
+      const next: TodoItem[] = [
+        ...todos,
         {
           id: `${Date.now()}-${Math.random().toString(36).slice(2)}`,
           text: trimmed,
@@ -415,15 +439,18 @@ function TodoPage() {
           createdAt: Date.now(),
           completedAt: null,
         },
-      ]);
+      ];
+      setTodos(next);
+      resort(next, sort);
       setText('');
       inputRef.current?.focus();
     },
-    [text]
+    [text, todos, sort, resort]
   );
 
   const removeTodo = useCallback((id: string) => {
     setTodos(prev => prev.filter(t => t.id !== id));
+    setSortedIds(prev => prev.filter(savedId => savedId !== id));
     setExpandedId(prev => (prev === id ? null : prev));
   }, []);
 
@@ -434,28 +461,37 @@ function TodoPage() {
     []
   );
 
+  const toggleDone = useCallback(
+    (id: string) => {
+      const next = todos.map(t =>
+        t.id === id
+          ? { ...t, completedAt: t.completedAt === null ? Date.now() : null }
+          : t
+      );
+      setTodos(next);
+      resort(next, sort);
+      // Collapse the row being toggled so it settles into place right away
+      setExpandedId(prev => (prev === id ? null : prev));
+    },
+    [todos, sort, resort]
+  );
+
   const clearCompleted = useCallback(() => {
-    setTodos(prev => prev.filter(t => t.completedAt === null));
+    const next = todos.filter(t => t.completedAt === null);
+    const remaining = new Set(next.map(t => t.id));
+    setTodos(next);
+    setSortedIds(ids => ids.filter(id => remaining.has(id)));
     setExpandedId(null);
     setShowClearModal(false);
-  }, []);
+  }, [todos]);
 
-  const sorted = useMemo(
-    () =>
-      [...todos].sort((a, b) => {
-        if ((a.completedAt === null) !== (b.completedAt === null))
-          return a.completedAt !== null ? 1 : -1;
-        if (a.completedAt !== null && b.completedAt !== null) {
-          return b.completedAt - a.completedAt;
-        }
-        if (sort === 'entry') {
-          return a.createdAt - b.createdAt;
-        }
-        const urgencyDiff = URGENCY_ORDER[a.urgency] - URGENCY_ORDER[b.urgency];
-        return urgencyDiff !== 0 ? urgencyDiff : a.text.localeCompare(b.text);
-      }),
-    [todos, sort]
-  );
+  // Render in the stored order, but with live todo data
+  const sorted = useMemo(() => {
+    const byId = new Map(todos.map(t => [t.id, t]));
+    return sortedIds
+      .map(id => byId.get(id))
+      .filter((t): t is TodoItem => t !== undefined);
+  }, [todos, sortedIds]);
 
   const completedCount = todos.filter(t => t.completedAt !== null).length;
 
@@ -505,7 +541,10 @@ function TodoPage() {
                 'btn btn-sm btn-ghost',
                 sort === mode && 'btn-active'
               )}
-              onClick={() => setSort(mode)}
+              onClick={() => {
+                setSort(mode);
+                resort(todos, mode);
+              }}
             >
               {mode === 'entry' ? 'By time' : 'By urgency'}
             </button>
@@ -548,18 +587,12 @@ function TodoPage() {
                   setExpandedId(todo.id);
                 }}
                 onCollapse={() => {
-                  collapseTimerRef.current = setTimeout(
-                    () => setExpandedId(null),
-                    0
-                  );
+                  collapseTimerRef.current = setTimeout(() => {
+                    setExpandedId(null);
+                    resort(todos, sort);
+                  }, 0);
                 }}
-                onToggleDone={() =>
-                  updateTodo(
-                    todo.id,
-                    'completedAt',
-                    todo.completedAt === null ? Date.now() : null
-                  )
-                }
+                onToggleDone={() => toggleDone(todo.id)}
                 onUpdateText={val => updateTodo(todo.id, 'text', val)}
                 onUpdateUrgency={u => updateTodo(todo.id, 'urgency', u)}
                 onRemove={() => removeTodo(todo.id)}
