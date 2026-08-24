@@ -120,5 +120,18 @@
     ],
     "patterns": [],
     "key": "glasgow-coma-scale"
+  },
+  {
+    "title": "Creatinine clearance",
+    "section": "Renal function",
+    "keywords": [
+      "Creatinine",
+      "Age",
+      "Sex",
+      "Body weight",
+      "Height"
+    ],
+    "patterns": [],
+    "key": "creatinine-clearance"
   }
 ]
