@@ -123,6 +123,10 @@ export default defineConfig({
         background_color: '#edeff7',
         orientation: 'portrait',
         display: 'standalone',
+        launch_handler: {
+          client_mode: 'focus-existing',
+        },
+        handle_links: 'preferred',
         icons: [
           {
             src: 'pwa-64x64.png',

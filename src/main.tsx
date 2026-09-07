@@ -5,6 +5,7 @@ import './index.css';
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen';
+import { setupLaunchQueue } from './utils/launchQueue';
 
 // Create a new router instance
 const router = createRouter({
@@ -12,6 +13,10 @@ const router = createRouter({
   defaultPreload: 'viewport',
   defaultPreloadDelay: 10,
 });
+
+// Navigate client-side when the installed PWA is relaunched
+// (launch_handler.client_mode: 'focus-existing')
+setupLaunchQueue(router);
 
 // Register the router instance for type safety
 declare module '@tanstack/react-router' {
