@@ -32,12 +32,10 @@ body {
 
 #root {
   height: 100svh;
-  width: 100svw;
 }
 
 #root:has(input:focus) {
   height: 100dvh;
-  width: 100dvw;
 }
 
 * {
