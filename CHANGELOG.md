@@ -1,3 +1,8 @@
+## 7/9/2026
+
+- Links to Quick Med now opens in app form if installed
+- Disable pull to refresh gesture on mobile
+
 ## 24/8/2026
 
 - Checking a task while editing now collapses it
