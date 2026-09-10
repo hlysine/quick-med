@@ -1,3 +1,7 @@
+## 10/9/2026
+
+- Use custom compact date/time display for tasks
+
 ## 7/9/2026
 
 - Links to Quick Med now opens in app form if installed

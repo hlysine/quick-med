@@ -117,6 +117,19 @@ function sortTodos(todos: TodoItem[], sort: SortMode): TodoItem[] {
 
 // ── TodoRow ──────────────────────────────────────────────────────────────────
 
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+/**
+ * Locale-independent time format: "6:32" / "0:13" for items under a day old,
+ * "5:12-1" / "19:54-5" (time + days from today) for older items.
+ */
+function formatTodoTime(timestamp: number): string {
+  const date = new Date(timestamp);
+  const time = `${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
+  const daysAgo = Math.floor((Date.now() - timestamp) / DAY_MS);
+  return daysAgo === 0 ? time : `${time}-${daysAgo}`;
+}
+
 interface TodoRowProps {
   todo: TodoItem;
   expanded: boolean;
@@ -352,10 +365,7 @@ function TodoRow({
       </span>
       <TodoLightbulb matches={matches} />
       <span className="text-xs text-base-content/30 shrink-0 tabular-nums">
-        {new Date(todo.createdAt).toLocaleTimeString([], {
-          hour: '2-digit',
-          minute: '2-digit',
-        })}
+        {formatTodoTime(todo.createdAt)}
       </span>
       <button
         type="button"
