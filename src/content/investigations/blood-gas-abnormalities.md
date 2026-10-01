@@ -17,13 +17,15 @@ patterns:
 
 ## First things first - is it an ABG or VBG?
 * The lab result may not tell you whether it is ABG or VBG, or may be wrongly labelled; the best way to tell is to **look at the O2 saturation** - if it is low and the patient did not have a corresponding history of desaturation [i.e. check SpO2 at the collection time], then it is a VBG
+    * If O2 saturation is low in the lab result but it matches SpO2 at the time of blood taking, it is still an ABG
 * If it is a VBG - then only the **metabolic parameters (pH, HCO3, BE)** are meaningful; ignore the respiratory parameters (pO2, pCO2, O2 saturation)
     * However, if VBG pH low (acidosis) while HCO3 and BE are not low (no metabolic acidosis) -> **suspect respiratory alkalosis, take ABG to confirm!!** (especially if pCO2 is very high e.g. >10)
 * If it is an ABG, interpret all the values in the clinical context which it was taken - was it taken during desaturation, or at current ventilator/BiPAP settings, or during weaning ventilatory support?
 
 ## Respiratory Acidosis
 * **Means T2RF (hypoventilation)**, need ventilatory support (non-invasive vs invasive)
-* If it is a weaning ABG: put the patient back on the most recent settings before weaning
+* If it is a weaning ABG: step down weaning depending on severity of acidosis
+    * Usually BiPAP weaning starts with meal time 0.5-1h weaning, then meal time 3-4 hours, then nocturnal BiPAP, then whole day standby before completely coming off BiPAP
 * If it is taken while on ventilatory support:
     * If it is taken after started NIV for AECOPD: **call MO!**
         * Ddx: mask leak, circuit leak, over-oxygenation (lost hypoxic drive), **inadequate IPAP, insufficient time on ventilator** (max allow 1-2hr)
@@ -37,7 +39,8 @@ patterns:
     * **BiPAP for T2RF with respiratory acidosis** (check C/I for NIV!)
         * Typical initial BiPAP settings: IPAP 14 EPAP 4 RR 14 FiO2 0.4
         * (RR is just for backup as patient on BiPAP should be conscious)
-        * Repeat ABG 1hr after initiation to adjust settings
+        * (Use higher FiO2 if patient has concurrent T1RF) 
+        * Repeat ABG 1-2hr after initiation to adjust settings
     * **CPAP for APO or OSA** (keep airways & alveoli open) (check C/I for NIV!)
 
 > **C/I for NIV (need intubation):**
@@ -59,6 +62,7 @@ patterns:
 
 ## Metabolic Acidosis
 * **Anion gap (AG) = Na - Cl - HCO3** [normal range: 4-12] or **Na + K - Cl - HCO3** [normal range: 8-16]
+* Order **serum chloride, BOHB, urine multistix, lactate** when suspecting metabolic acidosis
 * **Causes:**
     * **High anion gap metabolic acidosis (HAGMA): KULT**
         * **Ketoacidosis: diabetic**, alcoholic, starvation
@@ -69,7 +73,7 @@ patterns:
         * GI HCO3 loss: **diarrhoea, high output drain/stoma**
         * Renal HCO3 loss: type 2 RTA
         * Impaired renal acid retention: type 1, 4 RTA, renal hypoperfusion
-* **HAGMA management: order BHBA, urine ketone, lactate, +/- serum and urine toxicology**
+* **HAGMA management: bloods as above, +/- serum and urine toxicology**
     * Ketoacidosis: rehydration (refer to section on H'stix for DKA management)
     * Lactic acidosis:
         * If abd pain +ve: consider CT (angiogram) for ischaemic bowel
