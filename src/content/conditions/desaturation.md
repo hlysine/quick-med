@@ -67,7 +67,8 @@ keywords:
     * **BiPAP for T2RF with respiratory acidosis** (check C/I for NIV!)
         * Typical initial BiPAP settings: IPAP 14 EPAP 4 RR 14 FiO2 0.4
         * (RR is just for backup as patient on BiPAP should be conscious)
-        * Repeat ABG 1hr after initiation to adjust settings
+        * (Increase FiO2 if concurrent T1RF)
+        * Repeat ABG 1-2hr after initiation to adjust settings
     * **CPAP for APO or OSA** (keep airways & alveoli open) (check C/I for NIV!)
     * **High-flow nasal cannula (HFNC) for T1RF**
         * If desat: flow rate start at 60L/min (equal to peak inspiratory flow)
