@@ -54,9 +54,11 @@ patterns:
 ### K 5.0-6.0
 * **PO Resonium A / C 15g Q4H x 1-3 doses**
     * Usually give Resonium A in hyponatraemic patients
-    * If NPO, can give per rectally (same dosage)
+    * If NPO, can give per rectally (same dosage), but higher risk of intestinal complications
     * However, avoid **repeated PR Resonium** in patients undergoing GI surgery / NBO (risk of intestinal perforation due to necrosis/ischaemia)
+    * Usual max dose 60g per day
 * Recheck RFT afterwards
+* Avoid DI drip in renal failure patients **unless K>6.0**
 
 > **If Resonium C/I,** can consider saline-Lasix, zirconium, patiromer
 
