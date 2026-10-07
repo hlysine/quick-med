@@ -1,3 +1,7 @@
+## 7/10/2026
+
+- Fixed number inputs not working in calculators
+
 ## 10/9/2026
 
 - Use custom compact date/time display for tasks
