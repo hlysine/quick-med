@@ -29,12 +29,6 @@ export default memo(function CalcNumberInput({
     if (isNaN(newValue)) {
       onChange(newValue);
     }
-    if (min !== undefined && newValue < min) {
-      return;
-    }
-    if (max !== undefined && newValue > max) {
-      return;
-    }
     onChange(newValue);
   };
   return (
@@ -42,7 +36,7 @@ export default memo(function CalcNumberInput({
       {topLabel && (
         <legend className="fieldset-legend opacity-80">{topLabel}</legend>
       )}
-      <label className="input w-full input-lg has-[:out-of-range]:bg-error/20">
+      <label className="input w-full input-lg has-out-of-range:bg-error/20">
         {prefix && <span className="shrink-0 block w-28">{prefix}</span>}
         <input
           type="number"
